@@ -1,0 +1,8 @@
+@import '../../../assets/sass/custom/variables.scss';
+nav {
+  background: -webkit-linear-gradient(45deg,#303f9f,#7b1fa2);
+  background: linear-gradient(45deg,#303f9f,#7b1fa2);
+  box-shadow: none;
+  font-family: $font-noto;
+  font-weight: 600;
+}

@@ -1,0 +1,9 @@
+.landing-banner {
+    height: 100vh;
+    position: absolute;
+    width: 100%;
+    left: 0;
+    background: -webkit-linear-gradient(45deg,#303f9f,#7b1fa2);
+    background: linear-gradient(45deg,#303f9f,#7b1fa2);
+    z-index: -1;
+}
