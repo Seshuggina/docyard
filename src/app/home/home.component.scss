@@ -3,7 +3,87 @@
     position: absolute;
     width: 100%;
     left: 0;
-    background: -webkit-linear-gradient(45deg,#303f9f,#7b1fa2);
-    background: linear-gradient(45deg,#303f9f,#7b1fa2);
+    background: -webkit-linear-gradient(45deg, #303f9f, #7b1fa2);
+    background: linear-gradient(45deg, #303f9f, #7b1fa2);
+    // background-image: url("../../assets/img/banner.jpeg");
+    background-size: cover;
     z-index: -1;
+    color: #fff;
+    // .banner_background {
+    //     background: -webkit-linear-gradient(45deg,#303f9f,#7b1fa2);
+    //     background: linear-gradient(45deg,#303f9f,#7b1fa2);
+    // }
+    + section {
+        top: 100vh;
+        position: relative;
+    }
+    form {
+        transform: translateY(calc(50vh - 160px));
+    }
+}
+
+.input-group {
+    background-color: #fff;
+    border-radius: 6px;
+    height: 38px;
+    overflow: hidden;
+}
+
+.fixedLinks {
+    padding: 10px;
+    display: flex;
+    border-radius: 8px;
+    height: 75px;
+    left: 20%;
+    right: 20%;
+    bottom: 20px;
+    position: fixed;
+    a {
+        flex-grow: 1;
+        margin: 0 8px;
+        font-size: 1rem;
+        border-radius: 8px;
+        width: 25%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+       
+        i {
+            padding-right: 10px;
+        }
+        &:first-of-type {
+            margin-left: 0;
+        }
+        &:last-of-type {
+            margin-right: 0;
+        }
+    }
+}
+@media (min-width: 768px) {
+    .fixedLinks {
+        width: 60%;
+        background: -webkit-linear-gradient(90deg, #f8f8f8, #ffffff);
+        background: linear-gradient(95deg, #f8f8f8, #ffffff);
+    }
+}
+@media (max-width: 767.98px) {
+    .landing-banner {
+        form {
+            transform: none;
+            margin-top: 50px;
+        }
+    }
+    .fixedLinks {
+        width: calc(100% - 40px);
+        left: 20px;
+        right: 20px;
+        flex-wrap: wrap;
+        bottom: 133px;
+        a {
+            width: 100%;
+            margin-left: 0;
+            margin-right: 0;
+            margin-bottom: 10px;
+        }
+    }
 }

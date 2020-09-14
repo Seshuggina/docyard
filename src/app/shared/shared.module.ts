@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { NavbarComponent } from './navbar/navbar.component';
 import { FooterComponent } from './footer/footer.component';
+import { PageScrollDirective } from './directives/page-scroll.directive';
 
 
 
@@ -11,14 +12,16 @@ import { FooterComponent } from './footer/footer.component';
 @NgModule({
   declarations: [
     NavbarComponent,
-    FooterComponent
+    FooterComponent,
+    PageScrollDirective
   ],
   imports: [
     CommonModule
   ],
   exports:[
     NavbarComponent,
-    FooterComponent
+    FooterComponent,
+    PageScrollDirective
   ]
 })
 export class SharedModule { }

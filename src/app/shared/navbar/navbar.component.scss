@@ -5,4 +5,32 @@ nav {
   box-shadow: none;
   font-family: $font-noto;
   font-weight: 600;
+  
+}
+.navbar-light .navbar-brand {
+  color: #fff;
+}
+.navbar-light .navbar-nav .nav-link {
+  color: #fff;
+}
+.navbar-light .navbar-nav .active>.nav-link {
+  color: #fff;
+}
+
+@media (max-width: 767.98px) {
+  .navbar-brand {
+      width: 100%;
+      text-align: center;
+  }
+  .navbar-light .navbar-toggler {
+      position: absolute;
+      left: 20px;
+      top: 10px;
+  }
+  nav { 
+    > form {
+      transform: none;
+      margin-top: 20px;
+    }
+  }
 }
