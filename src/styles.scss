@@ -1,9 +1,17 @@
 @import '../src/assets/sass/custom/variables.scss';
 
-body {
+h1, h2, h3, h4, h5, h6 {
+    font-family: $font-noto;
+}
+
+html, body {
     font-family: $font-roboto;
 }
 
-h1, h2, h3, h4, h5, h6 {
-    font-family: $font-noto;
+input {
+    font-family: $font-roboto;
+}
+
+main {
+    padding-top: 70px;
 }

@@ -1,3 +1,4 @@
+@import "../../assets/sass/custom/variables.scss";
 .landing-banner {
     height: 100vh;
     position: absolute;
@@ -22,34 +23,79 @@
     }
 }
 
-.input-group {
+.home-search {
     background-color: #fff;
     border-radius: 6px;
-    height: 38px;
+    height: 50px;
     overflow: hidden;
+    font-size: 1.3rem;
+    font-family: $font-roboto;
+    display: flex;
+    flex-grow: 1;
+    .form-control {
+        height: 50px;
+        font-size: 1.3rem;
+        border: none;
+        border-radius: 0;
+    }
+    .k-dropdown {
+        background-color: #fff;
+        height: 49px;
+        font-size: 1.3rem;
+        .k-input {
+            height: 50px;
+        }
+        .k-input,
+        .k-select {
+            background-color: #fff;
+        }
+    }
+    .k-dropdown-wrap {
+        border: none;
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+        background-color: #ffffff;
+    }
+    button {
+        font-size: 1.3rem;
+        .k-icon {
+            font-size: 1.3rem;
+            top: 1px;
+        }
+    }
+}
+.k-list-container {
+    font-size: 1.3rem;
+    .k-list {
+        .k-item {
+            font-size: 1.3rem;
+            line-height: 2;
+        }
+    }
 }
 
-.fixedLinks {
+.landing-banner + .fixedLinks {
     padding: 10px;
     display: flex;
     border-radius: 8px;
     height: 75px;
     left: 20%;
     right: 20%;
-    bottom: 20px;
+    top: calc(100vh - 80px);
     position: fixed;
-    a {
+    button {
         flex-grow: 1;
         margin: 0 8px;
-        font-size: 1rem;
+        font-size: 1.3rem;
         border-radius: 8px;
         width: 25%;
         display: flex;
         align-items: center;
         justify-content: center;
-       
+
         i {
             padding-right: 10px;
+            font-size: 1.3rem;
         }
         &:first-of-type {
             margin-left: 0;
@@ -60,30 +106,56 @@
     }
 }
 @media (min-width: 768px) {
-    .fixedLinks {
+    .landing-banner + .fixedLinks {
         width: 60%;
         background: -webkit-linear-gradient(90deg, #f8f8f8, #ffffff);
         background: linear-gradient(95deg, #f8f8f8, #ffffff);
     }
 }
 @media (max-width: 767.98px) {
+    .home-search {
+        flex-direction: column;
+        height: auto;
+        overflow: unset;
+        background: transparent;
+        .k-dropdown {
+            width: 100%;
+        }
+        .k-dropdown,
+        .form-control,
+        .k-button {
+            margin-bottom: 20px;
+        }
+        .k-dropdown {
+            height: 40px;
+            .k-select,
+            .k-input {
+                height: 40px;
+            }
+        }
+        .form-control {
+            height: 40px;
+        }
+    }
     .landing-banner {
         form {
             transform: none;
             margin-top: 50px;
         }
-    }
-    .fixedLinks {
-        width: calc(100% - 40px);
-        left: 20px;
-        right: 20px;
-        flex-wrap: wrap;
-        bottom: 133px;
-        a {
+        + .fixedLinks {
             width: 100%;
-            margin-left: 0;
-            margin-right: 0;
-            margin-bottom: 10px;
+            left: 0;
+            right: 0;
+            position: relative;
+            flex-direction: column;
+            flex-wrap: unset;
+            top: 500px;
+            button {
+                width: 100%;
+                margin-left: 0;
+                margin-right: 0;
+                margin-bottom: 10px;
+            }
         }
     }
 }
