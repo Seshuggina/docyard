@@ -6,14 +6,14 @@
             <h4 class="text-center">Find the Right Doctor and Hospital</h4>
             <div class="row">
                 <div class="home-search">
-                    <kendo-dropdownlist #dropdownlist [data]="['Doctor', 'Hospital']"
-                    [defaultItem]="'Select Type...'"
+                    <kendo-dropdownlist #dropdownlist [data]="searchTypeOptions"
+                    [(ngModel)]="defaultSearchType"
                     [valuePrimitive]="true"
-                    (valueChange)="valueChange($event)"
-                    (selectionChange)="selectionChange($event)">
+                    (selectionChange)="selectionChange($event)"
+                    name="defaultSearchType">
                     </kendo-dropdownlist>
-                    <input type="text" class="form-control" placeholder="Name, Location & Etc"
-                        aria-label="Hospitals or Doctors Search Box">
+                    <input type="text" class="form-control" name="searchText" placeholder="Name, Location & Etc"
+                        aria-label="Hospitals or Doctors Search Box" [(ngModel)]="searchText">
                     <button kendoButton [icon]="'search'" [primary]="true" (click)="navigateToSearch()">Search</button>
                 </div>
             </div>

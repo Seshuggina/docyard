@@ -1,4 +1,28 @@
-.media {
+.doc-thumb {
+    display: flex;
     border: 1px solid #dddddd;
     padding: 10px;
+    flex-wrap: wrap;
+    margin-bottom: 15px;
+    box-shadow: 0px 0px 1px 2px rgba(0, 0, 0, 0.1);
+    &:hover {
+        box-shadow: 0px 0px 5px 2px rgba(0, 0, 0, 0.2);
+    }
+    .avatar {
+        width: 110px;
+        justify-content: center;
+        img {
+            width: 100px;
+        }
+    }
+    .distance {
+        padding-top: 10px;
+        margin-top: 10px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 75%;
+        width: 100%;
+        border-top: 1px solid #ddd;
+    }
 }

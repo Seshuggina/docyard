@@ -1,41 +1,49 @@
 <form class="col s12">
     <h4 class="text-center">Find the Right Doctor and Hospital</h4>
-    <div class="row">
-        <div class="input-group mb-3">
-            <div class="input-group-prepend">
-                <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown"
-                    aria-haspopup="true" aria-expanded="false">Looking For</button>
-                <div class="dropdown-menu">
-                    <a class="dropdown-item" href="#">Doctors</a>
-                    <a class="dropdown-item" href="#">Hospitals</a>
-                </div>
-            </div>
-            <input type="text" class="form-control" placeholder="Recipient's username" aria-label="Recipient's username"
-                aria-describedby="button-addon2">
-            <div class="input-group-append">
-                <button class="btn btn-primary" type="button">
-                    <i class="fa fa-search"></i>
-                </button>
-            </div>
+    <div class="row border">
+        <div class="home-search">
+            <kendo-dropdownlist #dropdownlist [data]="searchTypeOptions" [(ngModel)]="defaultSearchType"
+                [valuePrimitive]="true" name="defaultSearchType">
+            </kendo-dropdownlist>
+            <input type="text" class="form-control" placeholder="Name, Location & Etc" [(ngModel)]="searchText"
+                name="searchText" aria-label="Hospitals or Doctors Search Box">
+            <button kendoButton [icon]="'search'" [primary]="true" (click)="loadSearchResults()">Search</button>
         </div>
-
     </div>
 </form>
 
 <nav class="searchFilter d-flex">
-    <label></label>
+    <h1>Filter</h1>
 </nav>
 
-<section [@listAnimation]="searchResult.length">
-    <div class="media mb-3" *ngFor="let item of searchResult; index as idx">
-        <img src="https://media-exp1.licdn.com/dms/image/C5603AQEzxkiBN2QmPg/profile-displayphoto-shrink_200_200/0?e=1605744000&v=beta&t=iSQOnktLr7_bxGm5twg_FfqxX6JleTpQ77b1JOFrqu8"
-            class="mr-3" alt="Profile Photo">
-        <div class="media-body">
-            <h5 class="mt-0">{{item.title}}</h5>
-            {{item.body}}
-            <div class="mt-3">
-                <button class="btn btn-info">View Complete Profile</button>
+<section class="doc-thumb" *ngFor="let item of searchResult; index as idx" [@listAnimation]="searchResult.length">
+    <h5>{{item.title}}</h5>
+    <div class="w-75">
+        <div class="d-flex">
+            <div class="avatar">
+                <figure class="m-0">
+                    <img src="https://media-exp1.licdn.com/dms/image/C5603AQEzxkiBN2QmPg/profile-displayphoto-shrink_200_200/0?e=1605744000&v=beta&t=iSQOnktLr7_bxGm5twg_FfqxX6JleTpQ77b1JOFrqu8"
+                        class="mr-3" alt="Profile Photo">
+                </figure>
+                <span class="badge badge-success"><i class="thumbs-up"></i> Verified</span>
+            </div>
+            <div class="">
+                <span class="d-block text-muted">ABC | MBBS | FRCS</span>
+                <small class="d-block text-muted">10 Year of Experience</small>
+                Timings:
+                <span class="badge badge-success"><i class="thumbs-up"></i> 92% </span>
+                <button class="btn btn-link">999 Patient Stories</button>
             </div>
         </div>
+    </div>
+    <div class="w-25">
+        {{item.body}}
+        <div class="mt-3">
+            <button class="btn btn-info">Book Appointment</button>
+        </div>
+    </div>
+    <div class="distance">
+        <address class="m-0">Belladur, Bangalore</address>
+        <span class="text-warning">0.5KM</span>
     </div>
 </section>

@@ -9,6 +9,10 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class HomeComponent implements OnInit {
 
+  searchTypeOptions:string[] = ['Doctor', 'Hospital'];
+  defaultSearchType:string = 'Doctor';
+  searchText:string;
+
   constructor(
     private route: ActivatedRoute,
     private router: Router
@@ -20,12 +24,17 @@ export class HomeComponent implements OnInit {
     // this.dropdownlist.toggle(true);
   }
 
-  public navigateToSearch() {
+  navigateToSearch() {
     let searchQuery = {
-      "type":"doctors",
-      "searchText": "Bangalore"
-    } 
+      "type": this.defaultSearchType,
+      "searchText": this.searchText
+    }
     this.router.navigate(['/search'], { queryParams: searchQuery});
+  }
+
+
+  selectionChange($event) {
+    console.log($event);
   }
 
 }

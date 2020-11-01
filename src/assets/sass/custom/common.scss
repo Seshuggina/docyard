@@ -1,0 +1,41 @@
+.home-search {
+    background-color: #fff;
+    border-radius: 3px;
+    height: 50px;
+    overflow: hidden;
+    font-size: 1.3rem;
+    font-family: $font-roboto;
+    display: flex;
+    flex-grow: 1;
+    .form-control {
+        height: 50px;
+        font-size: 1.3rem;
+        border: none;
+        border-radius: 0;
+    }
+    .k-dropdown {
+        background-color: #fff;
+        height: 49px;
+        font-size: 1.3rem;
+        .k-input {
+            height: 50px;
+        }
+        .k-input,
+        .k-select {
+            background-color: #fff;
+        }
+    }
+    .k-dropdown-wrap {
+        border: none;
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+        background-color: #ffffff;
+    }
+    button {
+        font-size: 1.3rem;
+        .k-icon {
+            font-size: 1.3rem;
+            top: 1px;
+        }
+    }
+}

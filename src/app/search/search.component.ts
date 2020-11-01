@@ -1,6 +1,7 @@
 import { animate, query, stagger, style, transition, trigger } from '@angular/animations';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { MainSearch } from '../models/search.model';
 import { SearchResult } from '../services/models/search.model';
 import { SearchService } from '../services/search.service';
 // https://stackblitz.com/edit/angular-list-animations?file=app%2Fapp.component.html
@@ -31,7 +32,10 @@ import { SearchService } from '../services/search.service';
 export class SearchComponent implements OnInit {
 
   searchResult: SearchResult[] = [];
-  postObject$;
+  searchObject:MainSearch = new MainSearch();
+  searchTypeOptions:string[] = ['Doctor', 'Hospital'];
+  defaultSearchType:string = 'Doctor';
+  searchText:string;
 
   constructor(
     private searchService: SearchService,  
@@ -41,18 +45,24 @@ export class SearchComponent implements OnInit {
   }
 
   ngOnInit() {
-    let searchObject:any = {}
+    this.searchText = "";
     this.route.queryParams.subscribe(params => {
-      searchObject.searchType = params['type'];
-      searchObject.searchText = params['searchText'];
+      this.defaultSearchType = params['type'];
+      this.searchText = params['searchText'];
     });
-    
-    this.loadResult(searchObject)
-    //this.searchResult = this.route.snapshot.data.searchResult;
-    console.log(this.searchResult);
+
+    if(!this.defaultSearchType) {
+      this.defaultSearchType = this.searchTypeOptions[0];
+    } else if(!this.searchText) {
+      this.searchText = "";
+    }
+    this.loadSearchResults();
   }
-  private loadResult(searchObject) {
-    this.searchService.getSearchList(searchObject).subscribe((data) => {
+
+  loadSearchResults() {
+    this.searchObject.searchType = this.defaultSearchType;
+    this.searchObject.searchText = this.searchText;
+    this.searchService.getSearchList(this.searchObject).subscribe((data) => {
       this.searchResult = data;
     });
   }
