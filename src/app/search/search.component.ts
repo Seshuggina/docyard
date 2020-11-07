@@ -1,5 +1,6 @@
 import { animate, query, stagger, style, transition, trigger } from '@angular/animations';
 import { Component, OnInit } from '@angular/core';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import { MainSearch } from '../models/search.model';
 import { SearchResult } from '../services/models/search.model';
@@ -36,6 +37,8 @@ export class SearchComponent implements OnInit {
   searchTypeOptions: string[] = ['Doctor', 'Hospital'];
   defaultSearchType: string = 'Doctor';
   searchText: string;
+
+  
 
   constructor(
     private searchService: SearchService,
@@ -88,5 +91,15 @@ export class SearchComponent implements OnInit {
   public close() {
     this.opened = false;
   }
+
+  public form: FormGroup = new FormGroup({
+    firstName: new FormControl(),
+    lastName: new FormControl(),
+    phone: new FormControl(),
+    date: new FormControl(),
+    time: new FormControl(),
+    address: new FormControl(),
+    comments: new FormControl()
+});
 
 }

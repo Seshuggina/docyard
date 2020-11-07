@@ -56,12 +56,41 @@
     </div>
 </section>
 
-<kendo-dialog title="Confirm Appointment" *ngIf="opened" (close)="close()" [minWidth]="500" [width]="500">
-    <div class="">
+<kendo-dialog class="dialog" title="Confirm Appointment" *ngIf="opened" (close)="close()">
+    <form class="bookConfirmation" [formGroup]="form" autocomplete="off">
+        <kendo-floatinglabel text="First Name" class="floatingLabel">
+            <input formControlName="firstName" kendoTextBox name="firstName" autocomplete="off" />
+        </kendo-floatinglabel>
+        <kendo-floatinglabel text="Last Name" class="floatingLabel">
+            <input formControlName="lastName" kendoTextBox name="lastName" autocomplete="off" />
+        </kendo-floatinglabel>
+      
+        <kendo-floatinglabel text="Phone" class="floatingLabel">
+            <kendo-numerictextbox formControlName="phone" name="phone"></kendo-numerictextbox>
+        </kendo-floatinglabel>
 
-    </div>
+        <kendo-floatinglabel text="Date and Time" class="floatingLabel">
+            <kendo-datetimepicker formControlName="date" name="date">
+            </kendo-datetimepicker>
+        </kendo-floatinglabel>
+
+        <kendo-floatinglabel text="Address" [optional]="true" class="floatingLabel">
+            <input formControlName="address" kendoTextBox name="address" />
+        </kendo-floatinglabel>
+
+        <kendo-floatinglabel text="Comments" [optional]="true" class="floatingLabel">
+            <input formControlName="comments" kendoTextBox name="comments" />
+        </kendo-floatinglabel>
+
+        <kendo-floatinglabel text="Doctor" class="floatingLabel">
+            <input formControlName="firstName" readonly kendoTextBox name="firstName" />
+        </kendo-floatinglabel>
+        <kendo-floatinglabel text="Reporting Address" class="floatingLabel">
+            <input formControlName="lastName" readonly kendoTextBox name="lastName" />
+        </kendo-floatinglabel>
+    </form>
     <kendo-dialog-actions>
         <button kendoButton (click)="close()">Cancel</button>
-        <button kendoButton (click)="confirm()" primary="true">Confirm</button>
+        <button kendoButton [primary]="true" (click)="confirm()" primary="true">Confirm</button>
     </kendo-dialog-actions>
 </kendo-dialog>
