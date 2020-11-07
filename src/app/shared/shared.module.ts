@@ -1,12 +1,10 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { WindowModule, DialogsModule } from '@progress/kendo-angular-dialog';
 
 import { NavbarComponent } from './navbar/navbar.component';
 import { FooterComponent } from './footer/footer.component';
 import { PageScrollDirective } from './directives/page-scroll.directive';
-
-
-
 
 
 @NgModule({
@@ -16,7 +14,9 @@ import { PageScrollDirective } from './directives/page-scroll.directive';
     PageScrollDirective
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    DialogsModule,
+    WindowModule
   ],
   exports:[
     NavbarComponent,

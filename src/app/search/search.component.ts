@@ -19,9 +19,9 @@ import { SearchService } from '../services/search.service';
           ])
         ], { optional: true }),
         query(':enter', [
-          style({ opacity:0, transform: "translate(0, -50px)" }),
+          style({ opacity: 0, transform: "translate(0, -50px)" }),
           stagger(100, [
-            animate('0.5s', style({ opacity:1, transform: "translate(0, 0)" }))
+            animate('0.5s', style({ opacity: 1, transform: "translate(0, 0)" }))
           ])
         ], { optional: true })
       ])
@@ -32,14 +32,14 @@ import { SearchService } from '../services/search.service';
 export class SearchComponent implements OnInit {
 
   searchResult: SearchResult[] = [];
-  searchObject:MainSearch = new MainSearch();
-  searchTypeOptions:string[] = ['Doctor', 'Hospital'];
-  defaultSearchType:string = 'Doctor';
-  searchText:string;
+  searchObject: MainSearch = new MainSearch();
+  searchTypeOptions: string[] = ['Doctor', 'Hospital'];
+  defaultSearchType: string = 'Doctor';
+  searchText: string;
 
   constructor(
-    private searchService: SearchService,  
-    private route: ActivatedRoute  
+    private searchService: SearchService,
+    private route: ActivatedRoute
   ) {
 
   }
@@ -51,9 +51,9 @@ export class SearchComponent implements OnInit {
       this.searchText = params['searchText'];
     });
 
-    if(!this.defaultSearchType) {
+    if (!this.defaultSearchType) {
       this.defaultSearchType = this.searchTypeOptions[0];
-    } else if(!this.searchText) {
+    } else if (!this.searchText) {
       this.searchText = "";
     }
     this.loadSearchResults();
@@ -62,9 +62,31 @@ export class SearchComponent implements OnInit {
   loadSearchResults() {
     this.searchObject.searchType = this.defaultSearchType;
     this.searchObject.searchText = this.searchText;
-    this.searchService.getSearchList(this.searchObject).subscribe((data) => {
-      this.searchResult = data;
-    });
+    // this.searchService.getSearchList(this.searchObject).subscribe((data) => {
+    //   this.searchResult = data;
+    // });
+  }
+
+  bookAppointment() {
+    console.log("Book AppointMent");
+    this.open();
+  }
+
+  public opened: boolean = false;
+  public windowTop = 100;
+
+  public onClose(): void {
+    this.opened = false;
+  }
+
+  public open(): void {
+    this.opened = true;
+  }
+  public confirm() {
+    this.opened = false;
+  }
+  public close() {
+    this.opened = false;
   }
 
 }

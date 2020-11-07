@@ -9,11 +9,14 @@ import { HttpClientModule } from '@angular/common/http';
 import { ButtonModule } from '@progress/kendo-angular-buttons';
 import { ButtonGroupModule } from '@progress/kendo-angular-buttons';
 import { DropDownsModule } from '@progress/kendo-angular-dropdowns';
+import { DialogModule, WindowModule } from '@progress/kendo-angular-dialog';
+
 
 import { SharedModule } from './shared/shared.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { SearchComponent } from './search/search.component';
+
 
 
 @NgModule({
@@ -31,6 +34,8 @@ import { SearchComponent } from './search/search.component';
     DropDownsModule,
     ButtonModule,
     ButtonGroupModule,
+    DialogModule,
+    WindowModule,
     SharedModule
   ],
   exports:[],

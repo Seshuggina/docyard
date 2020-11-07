@@ -1,6 +1,6 @@
 <form class="col s12">
     <h4 class="text-center">Find the Right Doctor and Hospital</h4>
-    <div class="row border">
+    <div class="row search-border">
         <div class="home-search">
             <kendo-dropdownlist #dropdownlist [data]="searchTypeOptions" [(ngModel)]="defaultSearchType"
                 [valuePrimitive]="true" name="defaultSearchType">
@@ -16,34 +16,52 @@
     <h1>Filter</h1>
 </nav>
 
-<section class="doc-thumb" *ngFor="let item of searchResult; index as idx" [@listAnimation]="searchResult.length">
-    <h5>{{item.title}}</h5>
-    <div class="w-75">
-        <div class="d-flex">
-            <div class="avatar">
-                <figure class="m-0">
-                    <img src="https://media-exp1.licdn.com/dms/image/C5603AQEzxkiBN2QmPg/profile-displayphoto-shrink_200_200/0?e=1605744000&v=beta&t=iSQOnktLr7_bxGm5twg_FfqxX6JleTpQ77b1JOFrqu8"
-                        class="mr-3" alt="Profile Photo">
-                </figure>
-                <span class="badge badge-success"><i class="thumbs-up"></i> Verified</span>
+<section class="doc-thumbnail" *ngFor="let item of [1,2,3,5]; index as idx" [@listAnimation]="searchResult.length">
+    <h5 class="thumbnail-header">Seshu Vuggina</h5>
+    <div class="thumbnail-content">
+        <aside>
+            <div class="d-flex">
+                <div class="avatar text-center">
+                    <figure class="m-0">
+                        <img src="https://media-exp1.licdn.com/dms/image/C5603AQEzxkiBN2QmPg/profile-displayphoto-shrink_200_200/0?e=1605744000&v=beta&t=iSQOnktLr7_bxGm5twg_FfqxX6JleTpQ77b1JOFrqu8"
+                            class="mr-3" alt="Profile Photo">
+                    </figure>
+                    <span class="badge badge-success rounded-0 d-block"><i class="thumbs-up"></i> Verified</span>
+                </div>
+                <div class="">
+                    <span class="d-block text-muted">ABC | MBBS | FRCS</span>
+                    <small class="d-block text-muted">10 Year of Experience</small>
+                    <div class="media">
+                       <span class="pr-2"><i class="fa fa-stethoscope"></i>Timings: </span>
+                        <div class="media-body">
+                            10:00AM - 02:00PM <br>
+                            05:00PM - 10:00PM
+                        </div>
+                    </div>
+                    <span class="badge badge-success"><i class="icon-thumbs-up"></i> 92% </span>
+                    <button class="btn btn-link">999 Patient Stories</button>
+                </div>
             </div>
-            <div class="">
-                <span class="d-block text-muted">ABC | MBBS | FRCS</span>
-                <small class="d-block text-muted">10 Year of Experience</small>
-                Timings:
-                <span class="badge badge-success"><i class="thumbs-up"></i> 92% </span>
-                <button class="btn btn-link">999 Patient Stories</button>
+        </aside>
+        <aside class="book-appointment">
+            <strong>Price : 200.00 INR</strong>
+            <div class="mt-2">
+                <button kendoButton [primary]="true" (click)="bookAppointment()">Book Appointment</button>
             </div>
-        </div>
-    </div>
-    <div class="w-25">
-        {{item.body}}
-        <div class="mt-3">
-            <button class="btn btn-info">Book Appointment</button>
-        </div>
+        </aside>
     </div>
     <div class="distance">
-        <address class="m-0">Belladur, Bangalore</address>
+        <address class="m-0 text-muted">Belladur, Bangalore</address>
         <span class="text-warning">0.5KM</span>
     </div>
 </section>
+
+<kendo-dialog title="Confirm Appointment" *ngIf="opened" (close)="close()" [minWidth]="500" [width]="500">
+    <div class="">
+
+    </div>
+    <kendo-dialog-actions>
+        <button kendoButton (click)="close()">Cancel</button>
+        <button kendoButton (click)="confirm()" primary="true">Confirm</button>
+    </kendo-dialog-actions>
+</kendo-dialog>

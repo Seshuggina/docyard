@@ -36,9 +36,9 @@
     padding: 10px;
     display: flex;
     border-radius: 3px;
-    height: 75px;
-    left: 20%;
-    right: 20%;
+    height: 70px;
+    left: 10%;
+    right: 10%;
     top: calc(100vh - 80px);
     position: fixed;
     button {
@@ -65,7 +65,7 @@
 }
 @media (min-width: 768px) {
     .landing-banner + .fixedLinks {
-        width: 60%;
+        width: 80%;
         background: -webkit-linear-gradient(90deg, #f8f8f8, #ffffff);
         background: linear-gradient(95deg, #f8f8f8, #ffffff);
     }

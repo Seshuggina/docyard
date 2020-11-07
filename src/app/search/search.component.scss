@@ -1,22 +1,30 @@
-.doc-thumb {
+.doc-thumbnail {
     display: flex;
-    border: 1px solid #dddddd;
-    padding: 10px;
+    border: 1px solid #ddd;
     flex-wrap: wrap;
     margin-bottom: 15px;
     box-shadow: 0px 0px 1px 2px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 500ms;
     &:hover {
-        box-shadow: 0px 0px 5px 2px rgba(0, 0, 0, 0.2);
+        box-shadow: 0px 0px 5px 2px rgba(0, 0, 0, 0.3);
+    }
+    h5 {
+        width: 100%;
     }
     .avatar {
-        width: 110px;
         justify-content: center;
+        width: 100px;
+        margin-right: 10px;
         img {
-            width: 100px;
+            max-width: 100%;
+        }
+        figure {
+            min-height: 100px;
+            background-color: #ddd;
         }
     }
     .distance {
-        padding-top: 10px;
+        padding: 5px 10px;
         margin-top: 10px;
         display: flex;
         justify-content: space-between;
@@ -24,5 +32,38 @@
         font-size: 75%;
         width: 100%;
         border-top: 1px solid #ddd;
+        background: #f8f8f8;
+    }
+}
+.thumbnail-header {
+    padding: 5px 10px;
+    margin: 0;
+    background: #f8f8f8;
+    border-bottom: 1px solid #ddd;
+}
+.thumbnail-content {
+    width: 100%;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    @media (max-width: 767.98px) {
+        flex-wrap: wrap;
+        aside {
+            width: 100%;
+        }
+        .book-appointment {
+            text-align: center;
+            padding-top: 10px;
+            .k-button {
+                width: 100%;
+            }
+        }
+    }
+}
+
+.search-border {
+    .k-dropdown,
+    input {
+        border: 1px solid #ddd;
     }
 }
