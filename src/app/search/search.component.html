@@ -1,96 +1,185 @@
-<form class="col s12">
-    <h4 class="text-center">Find the Right Doctor and Hospital</h4>
-    <div class="row search-border">
-        <div class="home-search">
-            <kendo-dropdownlist #dropdownlist [data]="searchTypeOptions" [(ngModel)]="defaultSearchType"
-                [valuePrimitive]="true" name="defaultSearchType">
-            </kendo-dropdownlist>
-            <input type="text" class="form-control" placeholder="Name, Location & Etc" [(ngModel)]="searchText"
-                name="searchText" aria-label="Hospitals or Doctors Search Box">
-            <button kendoButton [icon]="'search'" [primary]="true" (click)="loadSearchResults()">Search</button>
-        </div>
+<article class="container-fluid">
+  <h4 class="text-center">Find the Right Doctor and Hospital</h4>
+  <form class="main-search form-inline search-border">
+    <div class="dropdown">
+      <button class="btn btn-warning dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+        aria-haspopup="true" aria-expanded="false">
+        <span>Select</span>
+      </button>
+      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+        <a class="dropdown-item" href="#">Doctor</a>
+        <a class="dropdown-item" href="#">Hospital</a>
+      </div>
     </div>
-</form>
+    <div class="form-group search-string">
+      <input type="text" autocomplete="off" class="form-control" name="searchText" placeholder="Name, Location & Etc"
+        aria-label="Hospitals or Doctors Search Box" [(ngModel)]="searchText">
+    </div>
+    <div class="form-group location">
+      <input type="text" autocomplete="off" class="form-control" name="searchText" placeholder="Location"
+        aria-label="location" [(ngModel)]="searchText">
+    </div>
+    <button type="submit" class="btn btn-warning">Search</button>
+  </form>
 
-<nav class="searchFilter d-flex">
-    <h1>Filter</h1>
-</nav>
-
-<section class="doc-thumbnail" *ngFor="let item of [1,2,3,5]; index as idx" [@listAnimation]="searchResult.length">
-    <h5 class="thumbnail-header">Seshu Vuggina</h5>
-    <div class="thumbnail-content">
-        <aside>
-            <div class="d-flex">
-                <div class="avatar text-center">
-                    <figure class="m-0">
-                        <img src="https://media-exp1.licdn.com/dms/image/C5603AQEzxkiBN2QmPg/profile-displayphoto-shrink_200_200/0?e=1605744000&v=beta&t=iSQOnktLr7_bxGm5twg_FfqxX6JleTpQ77b1JOFrqu8"
-                            class="mr-3" alt="Profile Photo">
-                    </figure>
-                    <span class="badge badge-success rounded-0 d-block"><i class="thumbs-up"></i> Verified</span>
-                </div>
-                <div class="">
-                    <span class="d-block text-muted">ABC | MBBS | FRCS</span>
-                    <small class="d-block text-muted">10 Year of Experience</small>
-                    <div class="media">
-                       <span class="pr-2"><i class="fa fa-stethoscope"></i>Timings: </span>
-                        <div class="media-body">
-                            10:00AM - 02:00PM <br>
-                            05:00PM - 10:00PM
-                        </div>
-                    </div>
-                    <span class="badge badge-success"><i class="icon-thumbs-up"></i> 92% </span>
-                    <button class="btn btn-link">999 Patient Stories</button>
-                </div>
+  <nav class="searchFilter d-flex">
+    <form>
+      <div class="form-row">
+        <div class="col">
+          <div class="dropdown">
+            <button class="btn dropdown-toggle" type="button" id="ratingDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Rating
+            </button>
+            <div class="dropdown-menu" aria-labelledby="ratingDropdown">
+              <a class="dropdown-item" href="#">5</a>
+              <a class="dropdown-item" href="#">4 and Above</a>
+              <a class="dropdown-item" href="#">3 and Above</a>
+              <a class="dropdown-item" href="#">2 and Above</a>
+              <a class="dropdown-item" href="#">1 and Above</a>
             </div>
-        </aside>
-        <aside class="book-appointment">
+          </div>
+        </div>
+        <div class="col">
+          <input type="text" class="form-control" placeholder="State">
+        </div>
+        <div class="col">
+          <input type="text" class="form-control" placeholder="Zip">
+        </div>
+      </div>
+    </form>
+  </nav>
+
+  <article class="search-result-wrap d-flex">
+    <div class="search-result">
+      <section class="doc-thumbnail" *ngFor="let item of [1,2,3,5]; index as idx"
+        [@listAnimation]="searchResult.length">
+        <h5 class="thumbnail-header">Seshu Vuggina</h5>
+        <div class="thumbnail-content">
+          <aside>
+            <div class="d-flex">
+              <div class="avatar text-center">
+                <figure class="m-0">
+                  <img
+                    src="https://media-exp1.licdn.com/dms/image/C5603AQEzxkiBN2QmPg/profile-displayphoto-shrink_200_200/0?e=1605744000&v=beta&t=iSQOnktLr7_bxGm5twg_FfqxX6JleTpQ77b1JOFrqu8"
+                    class="mr-3" alt="Profile Photo">
+                </figure>
+                <span class="badge badge-success rounded-0 d-block"><i class="thumbs-up"></i>
+                  Verified</span>
+              </div>
+              <div class="">
+                <span class="d-block text-muted">ABC | MBBS | FRCS</span>
+                <small class="d-block text-muted">10 Year of Experience</small>
+                <div class="media">
+                  <span class="pr-2"><i class="fa fa-stethoscope"></i>Timings: </span>
+                  <div class="media-body">
+                    10:00AM - 02:00PM <br>
+                    05:00PM - 10:00PM
+                  </div>
+                </div>
+                <span class="badge badge-success"><i class="icon-thumbs-up"></i> 92% </span>
+                <button class="btn btn-link">999 Patient Stories</button>
+              </div>
+            </div>
+          </aside>
+          <aside class="book-appointment">
             <strong>Price : 200.00 INR</strong>
             <div class="mt-2">
-                <button kendoButton [primary]="true" (click)="bookAppointment()">Book Appointment</button>
+              <button class="btn btn-warning mb-2 w-100" data-toggle="modal" data-target="#callForAppointment"
+                (click)="bookAppointment()">Call For Appointment</button><br>
+              <button class="btn btn-warning mb-2 w-100" data-toggle="modal" data-target="#bookAppointment"
+                (click)="bookAppointment()">Book online</button>
+                <button class="btn btn-warning w-100" data-toggle="modal" data-target="#bookAppointment"
+                (click)="bookAppointment()">View Profile</button>
             </div>
-        </aside>
+          </aside>
+        </div>
+        <div class="distance">
+          <address class="m-0 text-muted">Belladur, Bangalore</address>
+          <span class="text-warning">0.5KM</span>
+        </div>
+      </section>
     </div>
-    <div class="distance">
-        <address class="m-0 text-muted">Belladur, Bangalore</address>
-        <span class="text-warning">0.5KM</span>
+    <aside class="additional-content">
+      Your Adds and Addtional Data
+    </aside>
+  </article>
+</article>
+<div class="modal fade" id="callForAppointment" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+  aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Book Appointment</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <h3>Contact</h3>
+        <h4>+91 9885500044</h4>
+        <h4>080-1234567</h4>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
     </div>
-</section>
+  </div>
+</div>
 
-<kendo-dialog class="dialog" title="Confirm Appointment" *ngIf="opened" (close)="close()">
-    <form class="bookConfirmation" [formGroup]="form" autocomplete="off">
-        <kendo-floatinglabel text="First Name" class="floatingLabel">
-            <input formControlName="firstName" kendoTextBox name="firstName" autocomplete="off" />
-        </kendo-floatinglabel>
-        <kendo-floatinglabel text="Last Name" class="floatingLabel">
-            <input formControlName="lastName" kendoTextBox name="lastName" autocomplete="off" />
-        </kendo-floatinglabel>
-      
-        <kendo-floatinglabel text="Phone" class="floatingLabel">
-            <kendo-numerictextbox formControlName="phone" name="phone"></kendo-numerictextbox>
-        </kendo-floatinglabel>
+<div class="modal fade" id="bookAppointment" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+  aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Book Appointment</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="form-row">
+            <div class="form-group col-md-6 col-xs-12">
+              <label for="dcotor">Doctor</label>
+              <input type="text" readonly class="form-control" id="doctor" placeholder="Doctor">
+            </div>
+            <div class="form-group col-md-6 col-xs-12">
+              <label for="hospital">Hospital</label>
+              <input type="text" readonly class="form-control" id="hospital" placeholder="Hospital">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group col-md-6 col-xs-12">
+              <label for="fullName">Full Name</label>
+              <input type="text" class="form-control" id="fullName" placeholder="Doctor">
+            </div>
+            <div class="form-group col-md-6 col-xs-12">
+              <label for="phone">Email</label>
+              <input type="number" class="form-control" id="email" placeholder="Phone">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group col-md-6 col-xs-12">
+              <label for="phone">Phone</label>
+              <input type="number" class="form-control" id="phone" placeholder="Phone">
+            </div>
+            <div class="form-group col-md-6 col-xs-12">
+              <label for="inputAddress">Date and Time</label>
+              <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
+            </div>
+          </div>
 
-        <kendo-floatinglabel text="Date and Time" class="floatingLabel">
-            <kendo-datetimepicker formControlName="date" name="date">
-            </kendo-datetimepicker>
-        </kendo-floatinglabel>
-
-        <kendo-floatinglabel text="Address" [optional]="true" class="floatingLabel">
-            <input formControlName="address" kendoTextBox name="address" />
-        </kendo-floatinglabel>
-
-        <kendo-floatinglabel text="Comments" [optional]="true" class="floatingLabel">
-            <input formControlName="comments" kendoTextBox name="comments" />
-        </kendo-floatinglabel>
-
-        <kendo-floatinglabel text="Doctor" class="floatingLabel">
-            <input formControlName="firstName" readonly kendoTextBox name="firstName" />
-        </kendo-floatinglabel>
-        <kendo-floatinglabel text="Reporting Address" class="floatingLabel">
-            <input formControlName="lastName" readonly kendoTextBox name="lastName" />
-        </kendo-floatinglabel>
-    </form>
-    <kendo-dialog-actions>
-        <button kendoButton (click)="close()">Cancel</button>
-        <button kendoButton [primary]="true" (click)="confirm()" primary="true">Confirm</button>
-    </kendo-dialog-actions>
-</kendo-dialog>
+          <div class="form-group">
+            <label for="inputAddress2">Address 2</label>
+            <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>

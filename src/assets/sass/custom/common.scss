@@ -1,68 +1,61 @@
-.home-search {
-    background-color: #fff;
-    border-radius: 3px;
-    height: 45px;
-    overflow: hidden;
-    font-size: 1.3rem;
+.main-search {
     font-family: $font-roboto;
-    display: flex;
-    flex-grow: 1;
+    justify-content: center;
+    .search-string {
+        width: 40%;
+    }
+    .location {
+        width: 20%;
+        border-left: 1px solid #999;
+    }
     .form-control {
-        height: 45px;
-        font-size: 1.3rem;
         border: none;
-        border-radius: 0;
+        width: 100%;
     }
-    .k-dropdown {
-        background-color: #fff;
-        height: 44px;
-        font-size: 1.3rem;
-        .k-input {
-            height: 45px;
-        }
-        .k-input,
-        .k-select {
-            background-color: #fff;
+    .dropdown {
+        .btn {
+            max-width: 200px;
+            min-width: 150px;
+            text-align: left;
+            span {
+                max-width: 150px;
+                white-space: nowrap;
+                text-overflow: ellipsis;
+                overflow: hidden;
+                display: inline-flex;
+            }
         }
     }
-    .k-dropdown-wrap {
-        border: none;
-        border-top-right-radius: 0;
-        border-bottom-right-radius: 0;
-        background-color: #ffffff;
-    }
-    button {
-        font-size: 1.3rem;
-        .k-icon {
-            font-size: 1.3rem;
-            top: 1px;
-        }
+    .dropdown-toggle::after {
+        right: 12px;
+        position: absolute;
+        top: 22px;
     }
 }
 
 @media (max-width: 767.98px) {
-    .home-search {
+    .main-search {
         flex-direction: column;
-        height: auto;
-        overflow: unset;
-        background: transparent;
-        .k-dropdown {
+        .form-control,
+        .form-group,
+        .dropdown,
+        .btn {
             width: 100%;
         }
-        .k-dropdown,
-        .form-control,
-        .k-button {
-            margin-bottom: 20px;
-        }
-        .k-dropdown {
-            height: 37px;
-            .k-select,
-            .k-input {
-                height: 35px;
+        .dropdown {
+            .btn {
+                max-width: 100%;
+                span {
+                    max-width: 100%;
+                }
             }
         }
-        .form-control {
-            height: 35px;
+        .dropdown,
+        .form-group {
+            margin-bottom: 10px;
+        }
+        .location {
+            border-color: #ddd;
         }
     }
 }

@@ -1,3 +1,49 @@
+.search-border {
+    .dropdown,
+    .btn {
+        border-width: 1px 1px 1px 1px;
+        border-color: #ffc107;
+    }
+    .form-group {
+        border-width: 1px 0 1px 0;
+        border-color: #005cbf;
+    }
+    input {
+        border: 1px solid #ddd;
+    }
+}
+
+.main-search {
+    justify-content: left;
+    .dropdown-toggle {
+        &::after {
+            top: 18px;
+        }
+    }
+}
+.search-result-wrap {
+    @media (max-width: 767.98px) {
+        flex-direction: column;
+    }
+}
+
+.search-result {
+    width: 70%;
+    @media (max-width: 767.98px) {
+        width: 100%;
+    }
+}
+
+.additional-content {
+    margin-left: 2%;
+    flex-grow: 1;
+    padding: 10px;
+    border: 1px solid #ddd;
+    @media (max-width: 767.98px) {
+        margin-left: 0;
+    }
+}
+
 .doc-thumbnail {
     display: flex;
     border: 1px solid #ddd;
@@ -37,8 +83,14 @@
 .thumbnail-header {
     padding: 5px 10px;
     margin: 0;
-    background: #f8f8f8;
+    background:aliceblue;
     border-bottom: 1px solid #ddd;
+}
+.book-appointment {
+    padding-left: 20px;
+}
+.searchFilter {
+    margin: 10px 0;
 }
 .thumbnail-content {
     width: 100%;
@@ -52,17 +104,7 @@
         }
         .book-appointment {
             text-align: center;
-            padding-top: 10px;
-            .k-button {
-                width: 100%;
-            }
+            padding-left: 0;
         }
-    }
-}
-
-.search-border {
-    .k-dropdown,
-    input {
-        border: 1px solid #ddd;
     }
 }

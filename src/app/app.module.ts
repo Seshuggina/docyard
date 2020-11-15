@@ -6,15 +6,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
-import { ButtonModule } from '@progress/kendo-angular-buttons';
-import { ButtonGroupModule } from '@progress/kendo-angular-buttons';
-import { DropDownsModule } from '@progress/kendo-angular-dropdowns';
-import { DialogModule, WindowModule } from '@progress/kendo-angular-dialog';
-import { DateInputsModule } from '@progress/kendo-angular-dateinputs';
-import { LabelModule } from '@progress/kendo-angular-label';
-import { InputsModule } from '@progress/kendo-angular-inputs';
-//import { LayoutModule } from '@progress/kendo-angular-layout';
-
 
 import { SharedModule } from './shared/shared.module';
 import { AppComponent } from './app.component';
@@ -35,16 +26,7 @@ import { SearchComponent } from './search/search.component';
     BrowserAnimationsModule,
     FormsModule,
     HttpClientModule,
-    DateInputsModule,
-    InputsModule,
-    DropDownsModule,
-    ReactiveFormsModule,    
-    //LayoutModule,
-    ButtonModule,
-    LabelModule,
-    ButtonGroupModule,
-    DialogModule,
-    WindowModule,
+    ReactiveFormsModule,
     SharedModule
 
         

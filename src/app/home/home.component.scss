@@ -22,16 +22,6 @@
         transform: translateY(calc(50vh - 160px));
     }
 }
-.k-list-container {
-    font-size: 1.3rem;
-    .k-list {
-        .k-item {
-            font-size: 1.3rem;
-            line-height: 2;
-        }
-    }
-}
-
 .landing-banner + .fixedLinks {
     padding: 10px;
     display: flex;
@@ -71,26 +61,11 @@
     }
 }
 @media (max-width: 767.98px) {
-    .home-search {
+    .main-search {
         flex-direction: column;
         height: auto;
         overflow: unset;
         background: transparent;
-        .k-dropdown {
-            width: 100%;
-        }
-        .k-dropdown,
-        .form-control,
-        .k-button {
-            margin-bottom: 20px;
-        }
-        .k-dropdown {
-            height: 40px;
-            .k-select,
-            .k-input {
-                height: 40px;
-            }
-        }
         .form-control {
             height: 40px;
         }

@@ -1,40 +1,47 @@
 <section class="landing-banner">
     <!-- <div class="banner_background"></div> -->
-    <div class="container-fluid">
+    <div class="container">
         <!-- <h2>Your Banner Title Comes Here</h2> -->
-        <form class="col s12">
-            <h4 class="text-center">Find the Right Doctor and Hospital</h4>
-            <div class="row">
-                <div class="home-search">
-                    <kendo-dropdownlist #dropdownlist [data]="searchTypeOptions"
-                    [(ngModel)]="defaultSearchType"
-                    [valuePrimitive]="true"
-                    (selectionChange)="selectionChange($event)"
-                    name="defaultSearchType">
-                    </kendo-dropdownlist>
-                    <input type="text" class="form-control" name="searchText" placeholder="Name, Location & Etc"
-                        aria-label="Hospitals or Doctors Search Box" [(ngModel)]="searchText">
-                    <button kendoButton [icon]="'search'" [primary]="true" (click)="navigateToSearch()">Search</button>
+        <h4 class="text-center">Find the Right Doctor and Hospital</h4>
+        <form class="main-search form-inline">
+            <div class="dropdown">
+                <button class="btn btn-warning btn-lg dropdown-toggle" type="button" id="dropdownMenuButton"
+                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <span>Select</span>
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <a class="dropdown-item" href="#">Doctor</a>
+                    <a class="dropdown-item" href="#">Hospital</a>
                 </div>
             </div>
+            <div class="form-group search-string">
+                <input type="text" autocomplete="off" class="form-control form-control-lg" name="searchText" placeholder="Name, Location & Etc"
+                    aria-label="Hospitals or Doctors Search Box" [(ngModel)]="searchText">
+            </div>
+            <div class="form-group location">
+                <input type="text" autocomplete="off" class="form-control form-control-lg" name="searchText"
+                    placeholder="Location"
+                    aria-label="location" [(ngModel)]="searchText">
+            </div>
+            <button type="submit" class="btn btn-warning btn-lg" (click)="navigateToSearch()">Search</button>
         </form>
     </div>
 </section>
 
 <section class="fixedLinks">
-    <button kendoButton [primary]="true">
+    <button class="btn btn-warning">
         <i class="fa fa-stethoscope"></i>
         Doctor
     </button>
-    <button kendoButton [primary]="true">
+    <button class="btn btn-warning">
         <i class="fa fa-hospital-o"></i>
         Hospital
     </button>
-    <button kendoButton [primary]="true">
+    <button class="btn btn-warning">
         <i class="fa fa-medkit"></i>
         Medikit
     </button>
-    <button kendoButton [primary]="true">
+    <button class="btn btn-warning">
         <i class="fa fa-ambulance"></i>
         Ambulance
     </button>
