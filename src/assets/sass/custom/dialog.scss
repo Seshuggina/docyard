@@ -2,3 +2,13 @@
     display: flex;
     flex-wrap: wrap;
 }
+.modal-header {
+    padding: 0.3rem 1rem;
+}
+.modal-header .close {
+    padding: 0.5rem 1rem;
+    margin: -0.4rem -1rem -1rem auto;
+}
+.modal-footer {
+    padding: 0.35rem;
+}

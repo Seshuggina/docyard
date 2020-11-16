@@ -25,9 +25,10 @@
   <nav class="searchFilter d-flex">
     <form>
       <div class="form-row">
+        <div class="pl-2">Filter:</div>
         <div class="col">
           <div class="dropdown">
-            <button class="btn dropdown-toggle" type="button" id="ratingDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <button class="btn btn-sm w-100 border dropdown-toggle" type="button" id="ratingDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               Rating
             </button>
             <div class="dropdown-menu" aria-labelledby="ratingDropdown">
@@ -40,10 +41,10 @@
           </div>
         </div>
         <div class="col">
-          <input type="text" class="form-control" placeholder="State">
+          <input type="text" class="form-control form-control-sm" placeholder="Experience">
         </div>
         <div class="col">
-          <input type="text" class="form-control" placeholder="Zip">
+          <input type="text" class="form-control form-control-sm" placeholder="Specilization">
         </div>
       </div>
     </form>
@@ -53,7 +54,8 @@
     <div class="search-result">
       <section class="doc-thumbnail" *ngFor="let item of [1,2,3,5]; index as idx"
         [@listAnimation]="searchResult.length">
-        <h5 class="thumbnail-header">Seshu Vuggina</h5>
+        <h5 class="thumbnail-header">Seshu Vuggina <small class="text-muted">- 10 Year of Experience</small></h5>
+        
         <div class="thumbnail-content">
           <aside>
             <div class="d-flex">
@@ -68,7 +70,6 @@
               </div>
               <div class="">
                 <span class="d-block text-muted">ABC | MBBS | FRCS</span>
-                <small class="d-block text-muted">10 Year of Experience</small>
                 <div class="media">
                   <span class="pr-2"><i class="fa fa-stethoscope"></i>Timings: </span>
                   <div class="media-body">
@@ -77,18 +78,18 @@
                   </div>
                 </div>
                 <span class="badge badge-success"><i class="icon-thumbs-up"></i> 92% </span>
-                <button class="btn btn-link">999 Patient Stories</button>
+                <button class="btn btn-sm btn-link">999 Patient Stories</button>
               </div>
             </div>
           </aside>
           <aside class="book-appointment">
-            <strong>Price : 200.00 INR</strong>
+            <strong class="d-block text-center">Price : 200.00 INR</strong>
             <div class="mt-2">
-              <button class="btn btn-warning mb-2 w-100" data-toggle="modal" data-target="#callForAppointment"
+              <button class="btn btn-warning btn-sm mb-2 w-100" data-toggle="modal" data-target="#callForAppointment"
                 (click)="bookAppointment()">Call For Appointment</button><br>
-              <button class="btn btn-warning mb-2 w-100" data-toggle="modal" data-target="#bookAppointment"
+              <button class="btn btn-warning btn-sm mb-2 w-100" data-toggle="modal" data-target="#bookAppointment"
                 (click)="bookAppointment()">Book online</button>
-                <button class="btn btn-warning w-100" data-toggle="modal" data-target="#bookAppointment"
+                <button class="btn btn-warning btn-sm w-100" data-toggle="modal" data-target="#bookAppointment"
                 (click)="bookAppointment()">View Profile</button>
             </div>
           </aside>
@@ -109,19 +110,14 @@
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLongTitle">Book Appointment</h5>
+        <h5 class="modal-title" id="exampleModalLongTitle">Contact Numbers</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
       <div class="modal-body">
-        <h3>Contact</h3>
-        <h4>+91 9885500044</h4>
-        <h4>080-1234567</h4>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
+        <strong>Mobile: +91 9885500044</strong><br>
+        <strong>Landline: 080-1234567</strong>
       </div>
     </div>
   </div>
@@ -177,8 +173,8 @@
         </form>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
+        <button type="button" class="btn btn-sm btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-sm btn-primary">Save changes</button>
       </div>
     </div>
   </div>

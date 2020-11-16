@@ -13,27 +13,94 @@
 </div> -->
 
 <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="#">DOCYARD</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-      <ul class="navbar-nav">
-        <li class="nav-item active">
-          <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Doctors</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Hospitals</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Register</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Login</a>
-        </li>
-      </ul>
+  <a class="navbar-brand" href="#">DOCYARD</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav"
+    aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+    <ul class="navbar-nav">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link disabled" href="#" aria-disabled="true">Doctors</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link disabled" href="#" aria-disabled="true">Hospitals</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Register</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#" tabindex="-1" data-toggle="modal" data-target="#login">Login</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<div class="modal fade" id="login" tabindex="-1" role="dialog" aria-labelledby="Log In" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Sign in</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div id="logreg-forms">
+          <form class="form-signin">
+            <div class="social-login">
+              <button class="btn facebook-btn social-btn" type="button"><span><i class="fab fa-facebook-f"></i> Sign in
+                  with Facebook</span> </button>
+              <button class="btn google-btn social-btn" type="button"><span><i class="fab fa-google-plus-g"></i> Sign in
+                  with Google+</span> </button>
+            </div>
+            <p class="text-center mb-2"> OR </p>
+            <input type="email" id="inputEmail" class="form-control mb-2" placeholder="Email address" required=""
+              autofocus="">
+            <input type="password" id="inputPassword" class="form-control mb-2" placeholder="Password" required="">
+
+            <button class="btn btn-success btn-block" type="submit"><i class="fas fa-sign-in-alt"></i> Sign in</button>
+            <a href="#" id="forgot_pswd">Forgot password?</a>
+            <hr>
+            <button class="btn btn-primary btn-block" type="button" id="btn-signup"><i class="fas fa-user-plus"></i>
+              Sign up New Account</button>
+          </form>
+
+          <form action="/reset/password/" class="form-reset" style="display:none">
+            <input type="email" id="resetEmail" class="form-control" placeholder="Email address" required=""
+              autofocus="">
+            <button class="btn btn-primary btn-block" type="submit">Reset Password</button>
+            <a href="#" id="cancel_reset"><i class="fas fa-angle-left"></i> Back</a>
+          </form>
+
+          <form action="/signup/" class="form-signup" style="display:none">
+            <div class="social-login">
+              <button class="btn facebook-btn social-btn" type="button"><span><i class="fab fa-facebook-f"></i> Sign up
+                  with Facebook</span> </button>
+            </div>
+            <div class="social-login">
+              <button class="btn google-btn social-btn" type="button"><span><i class="fab fa-google-plus-g"></i> Sign up
+                  with Google+</span> </button>
+            </div>
+
+            <p style="text-align:center">OR</p>
+
+            <input type="text" id="user-name" class="form-control" placeholder="Full name" required="" autofocus="">
+            <input type="email" id="user-email" class="form-control" placeholder="Email address" required autofocus="">
+            <input type="password" id="user-pass" class="form-control" placeholder="Password" required autofocus="">
+            <input type="password" id="user-repeatpass" class="form-control" placeholder="Repeat Password" required
+              autofocus="">
+
+            <button class="btn btn-primary btn-block" type="submit"><i class="fas fa-user-plus"></i> Sign Up</button>
+            <a href="#" id="cancel_signup"><i class="fas fa-angle-left"></i> Back</a>
+          </form>
+          <br>
+
+        </div>
+      </div>
     </div>
-  </nav>
+  </div>
+</div>

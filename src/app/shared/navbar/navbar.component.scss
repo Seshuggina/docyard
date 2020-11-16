@@ -1,11 +1,10 @@
-@import '../../../assets/sass/custom/variables.scss';
+@import "../../../assets/sass/custom/variables.scss";
 nav {
-  background: -webkit-linear-gradient(45deg,#303f9f,#7b1fa2);
-  background: linear-gradient(45deg,#303f9f,#7b1fa2);
+  background: -webkit-linear-gradient(45deg, #303f9f, #7b1fa2);
+  background: linear-gradient(45deg, #303f9f, #7b1fa2);
   box-shadow: none;
   font-family: $font-noto;
   font-weight: 600;
-  
 }
 .navbar-light .navbar-brand {
   color: #fff;
@@ -13,24 +12,68 @@ nav {
 .navbar-light .navbar-nav .nav-link {
   color: #fff;
 }
-.navbar-light .navbar-nav .active>.nav-link {
+.navbar-light .navbar-nav .active > .nav-link {
   color: #fff;
 }
 
 @media (max-width: 767.98px) {
   .navbar-brand {
-      width: 100%;
-      text-align: center;
+    width: 100%;
+    text-align: center;
   }
   .navbar-light .navbar-toggler {
-      position: absolute;
-      left: 20px;
-      top: 10px;
+    position: absolute;
+    left: 20px;
+    top: 10px;
   }
-  nav { 
+  nav {
     > form {
       transform: none;
       margin-top: 20px;
     }
+  }
+}
+
+#logreg-forms .social-login {
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+#logreg-forms .social-btn {
+  color: white;
+  width: 49%;
+  font-size: 0.9rem;
+}
+#logreg-forms .facebook-btn {
+  background-color: #3c589c;
+}
+
+#logreg-forms .google-btn {
+  background-color: #df4b3b;
+}
+@media screen and (max-width: 500px) {
+  #logreg-forms .social-login {
+    width: 200px;
+    margin: 0 auto;
+    margin-bottom: 10px;
+  }
+  #logreg-forms .social-btn {
+    font-size: 1.3rem;
+    font-weight: 100;
+    color: white;
+    width: 100%;
+  }
+  #logreg-forms .social-btn:nth-child(1) {
+    margin-bottom: 5px;
+  }
+  #logreg-forms .social-btn span {
+    display: none;
+  }
+  #logreg-forms .facebook-btn:after {
+    content: "Facebook";
+  }
+
+  #logreg-forms .google-btn:after {
+    content: "Google+";
   }
 }
