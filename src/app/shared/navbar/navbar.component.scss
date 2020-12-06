@@ -77,3 +77,15 @@ nav {
     content: "Google+";
   }
 }
+
+.navbar-nav {
+  flex: 1;
+  .nav-item {
+    &:first-child {
+      flex: 1;
+    }
+  }
+  .main-search .dropdown-toggle::after {
+    top: 17px;
+  }
+}

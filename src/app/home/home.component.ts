@@ -1,5 +1,6 @@
 import { Component, OnInit, ViewChild, ViewEncapsulation } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { Globals } from '../shared/services/globals.service';
 
 @Component({
   selector: 'app-home',
@@ -7,13 +8,14 @@ import { ActivatedRoute, Router } from '@angular/router';
   styleUrls: ['./home.component.scss'],
   encapsulation: ViewEncapsulation.None
 })
-export class HomeComponent implements OnInit {
 
+export class HomeComponent implements OnInit {
   searchTypeOptions:string[] = ['Doctor', 'Hospital'];
   defaultSearchType:string = 'Doctor';
   searchText:string;
 
   constructor(
+    private globals:Globals,
     private route: ActivatedRoute,
     private router: Router
   ) { }
@@ -21,7 +23,7 @@ export class HomeComponent implements OnInit {
   @ViewChild("dropdownlist") public dropdownlist: any;
 
   ngOnInit(): void {
-    // this.dropdownlist.toggle(true);
+    this.globals.showSearchInHeader.next(false);
   }
 
   navigateToSearch() {

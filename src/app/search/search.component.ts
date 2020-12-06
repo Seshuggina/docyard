@@ -5,6 +5,7 @@ import { ActivatedRoute } from '@angular/router';
 import { MainSearch } from '../models/search.model';
 import { SearchResult } from '../services/models/search.model';
 import { SearchService } from '../services/search.service';
+import { Globals } from '../shared/services/globals.service';
 // https://stackblitz.com/edit/angular-list-animations?file=app%2Fapp.component.html
 
 @Component({
@@ -42,12 +43,14 @@ export class SearchComponent implements OnInit {
 
   constructor(
     private searchService: SearchService,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private globals:Globals
   ) {
-
+    this.globals.showSearchInHeader.next(true);
   }
 
   ngOnInit() {
+    
     this.searchText = "";
     this.route.queryParams.subscribe(params => {
       this.defaultSearchType = params['type'];

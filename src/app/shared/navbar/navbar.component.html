@@ -1,17 +1,3 @@
-<!-- <div class="navbar-fixed" appPageScroll>
-    <nav>
-        <div class="nav-wrapper">
-            <a href="#" class="brand-logo">DOCYARD</a>
-            <ul id="nav-mobile" class="right hide-on-med-and-down">
-                <li><a href="sass.html">Doctors</a></li>
-                <li><a href="badges.html">Hospitals</a></li>
-                <li><a href="collapsible.html">Register</a></li>
-                <li><a href="collapsible.html">Login</a></li>
-            </ul>
-        </div>
-    </nav>
-</div> -->
-
 <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
   <a class="navbar-brand" href="#">DOCYARD</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav"
@@ -20,14 +6,33 @@
   </button>
   <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
     <ul class="navbar-nav">
+      <li class="nav-item">
+        <!-- Search -->
+        <form class="main-search form-inline search-border float-left" *ngIf="showMainSearch">
+          <div class="dropdown">
+            <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+              aria-haspopup="true" aria-expanded="false">
+              <span>Select</span>
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+              <a class="dropdown-item" href="#">Doctor</a>
+              <a class="dropdown-item" href="#">Hospital</a>
+            </div>
+          </div>
+          <div class="form-group search-string">
+            <input type="text" autocomplete="off" class="form-control" name="searchText" placeholder="Name, Location & Etc"
+              aria-label="Hospitals or Doctors Search Box" [(ngModel)]="searchText">
+          </div>
+          <div class="form-group location">
+            <input type="text" autocomplete="off" class="form-control" name="searchText" placeholder="Location"
+              aria-label="location" [(ngModel)]="searchText">
+          </div>
+          <button type="submit" class="btn btn-primary">Search</button>
+        </form>
+        <!-- End of Search -->
+      </li>
       <li class="nav-item active">
         <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link disabled" href="#" aria-disabled="true">Doctors</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link disabled" href="#" aria-disabled="true">Hospitals</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="#">Register</a>

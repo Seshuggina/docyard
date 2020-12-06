@@ -1,27 +1,4 @@
 <article class="container-fluid">
-  <h4 class="text-center">Find the Right Doctor and Hospital</h4>
-  <form class="main-search form-inline search-border">
-    <div class="dropdown">
-      <button class="btn btn-warning dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
-        aria-haspopup="true" aria-expanded="false">
-        <span>Select</span>
-      </button>
-      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-        <a class="dropdown-item" href="#">Doctor</a>
-        <a class="dropdown-item" href="#">Hospital</a>
-      </div>
-    </div>
-    <div class="form-group search-string">
-      <input type="text" autocomplete="off" class="form-control" name="searchText" placeholder="Name, Location & Etc"
-        aria-label="Hospitals or Doctors Search Box" [(ngModel)]="searchText">
-    </div>
-    <div class="form-group location">
-      <input type="text" autocomplete="off" class="form-control" name="searchText" placeholder="Location"
-        aria-label="location" [(ngModel)]="searchText">
-    </div>
-    <button type="submit" class="btn btn-warning">Search</button>
-  </form>
-
   <nav class="searchFilter d-flex">
     <form>
       <div class="form-row">
@@ -85,11 +62,11 @@
           <aside class="book-appointment">
             <strong class="d-block text-center">Price : 200.00 INR</strong>
             <div class="mt-2">
-              <button class="btn btn-warning btn-sm mb-2 w-100" data-toggle="modal" data-target="#callForAppointment"
+              <button class="btn btn-primary btn-sm mb-2 w-100" data-toggle="modal" data-target="#callForAppointment"
                 (click)="bookAppointment()">Call For Appointment</button><br>
-              <button class="btn btn-warning btn-sm mb-2 w-100" data-toggle="modal" data-target="#bookAppointment"
+              <button class="btn btn-primary btn-sm mb-2 w-100" data-toggle="modal" data-target="#bookAppointment"
                 (click)="bookAppointment()">Book online</button>
-                <button class="btn btn-warning btn-sm w-100" data-toggle="modal" data-target="#bookAppointment"
+                <button class="btn btn-primary btn-sm w-100" data-toggle="modal" data-target="#bookAppointment"
                 (click)="bookAppointment()">View Profile</button>
             </div>
           </aside>
