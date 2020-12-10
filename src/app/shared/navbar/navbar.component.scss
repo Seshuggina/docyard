@@ -78,6 +78,12 @@ nav {
   }
 }
 
+@media (max-width: 990px) {
+  .nav-search {
+    display: none;
+  }
+}
+
 .navbar-nav {
   flex: 1;
   .nav-item {
