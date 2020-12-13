@@ -1,4 +1,5 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
 import { Globals } from '../services/globals.service';
@@ -12,7 +13,7 @@ export class NavbarComponent implements OnInit, OnDestroy {
 
   searchText:string;
   showMainSearch:boolean;
-  showNavbarSearch:boolean = false;
+  showHideSearch:boolean;
 
   // Private Variables
   private unsubscribe: Subject<void> = new Subject();
@@ -27,7 +28,7 @@ export class NavbarComponent implements OnInit, OnDestroy {
   }
 
   toggleNavbarSearch() {
-    this.showNavbarSearch = !this.showNavbarSearch;
+    this.showHideSearch = !this.showHideSearch;
   }
 
   ngOnDestroy() {

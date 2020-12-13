@@ -1,7 +1,7 @@
 <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
   <a class="navbar-brand" href="#">Medi <i class="fa fa-medkit"></i> Dial</a>
-  <div class="nav-search" *ngIf="showNavbarSearch">
-    <form class="main-search form-inline search-border float-left" *ngIf="showMainSearch">
+  <div class="nav-search" *ngIf="showHideSearch">
+    <form class="main-search form-inline search-border float-left">
       <div class="dropdown">
         <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
           aria-haspopup="true" aria-expanded="false">
@@ -38,7 +38,7 @@
     </ul>
   </div>
 
-  <button id="toggleSearch" (click)="toggleNavbarSearch()" class="btn"><i class="fa fa-search"></i></button>
+  <button id="toggleSearch" *ngIf="showMainSearch" (click)="toggleNavbarSearch()" class="btn"><i class="fa fa-search"></i></button>
 </nav>
 
 <div class="modal fade" id="login" tabindex="-1" role="dialog" aria-labelledby="Log In" aria-hidden="true">

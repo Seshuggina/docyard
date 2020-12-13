@@ -15,7 +15,8 @@ import { PageScrollDirective } from './directives/page-scroll.directive';
   ],
   imports: [
     CommonModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   exports:[
     NavbarComponent,
