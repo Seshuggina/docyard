@@ -93,9 +93,11 @@
     }
 }
 
-// .navbar-nav .main-search {
-//     display: none;
-//     opacity: 0;
-//     visibility: hidden;
-//     z-index: -1111;
-// }
+.navbar {
+    .nav-search, #toggleSearch {
+        display: none;
+        opacity: 0;
+        visibility: hidden;
+        z-index: -1111;
+    }
+}

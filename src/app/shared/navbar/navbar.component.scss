@@ -16,22 +16,20 @@ nav {
   color: #fff;
 }
 
-@media (max-width: 767.98px) {
-  .navbar-brand {
-    width: 100%;
-    text-align: center;
-  }
-  .navbar-light .navbar-toggler {
-    position: absolute;
-    left: 20px;
-    top: 10px;
-  }
-  nav {
-    > form {
-      transform: none;
-      margin-top: 20px;
-    }
-  }
+.navbar-nav {
+  flex: 1;
+}
+
+.main-search .dropdown-toggle::after {
+  top: 17px;
+}
+
+#toggleSearch {
+  position: absolute;
+  right: 10px;
+  color: white;
+  top: 8px;
+  z-index: 2;
 }
 
 #logreg-forms .social-login {
@@ -50,6 +48,65 @@ nav {
 
 #logreg-forms .google-btn {
   background-color: #df4b3b;
+}
+@media (max-width: 767.98px) {
+  .navbar-brand {
+    width: 100%;
+    text-align: center;
+  }
+  .navbar-light .navbar-toggler {
+    position: absolute;
+    left: 20px;
+    top: 10px;
+  }
+  nav {
+    > form {
+      transform: none;
+      margin-top: 20px;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .nav-search {
+    position: fixed;
+    width: 100%;
+    left: 0;
+    padding: 10px;
+    flex-direction: row;
+    background: rgba(0,0,0,0.5);
+    z-index: 1;
+    .main-search {
+      flex-direction: row;
+      align-items: center;
+      justify-content: left;
+      .btn, .dropdown {
+        width: auto;
+      }
+      .location, .search-string, .dropdown {
+        margin-bottom: 0;
+      }
+      .location {
+        width: 25%;
+      }
+      .search-string {
+        width: 30%;
+      }
+    }
+  }
+}
+
+@media (min-width: 767.98px) {
+  .navbar-expand-lg .navbar-nav .nav-link {
+    padding-right: 0.5rem;
+    padding-left: 0.5rem;
+  }
+  #toggleSearch {
+    display: none;
+  }
+  .navbar {
+    flex-flow: inherit;
+  }
 }
 @media screen and (max-width: 500px) {
   #logreg-forms .social-login {
@@ -76,22 +133,14 @@ nav {
   #logreg-forms .google-btn:after {
     content: "Google+";
   }
-}
-
-@media (max-width: 990px) {
   .nav-search {
-    display: none;
-  }
-}
-
-.navbar-nav {
-  flex: 1;
-  .nav-item {
-    &:first-child {
-      flex: 1;
+    .main-search {
+      .location {
+        width: 20%;
+      }
+      .search-string {
+        width: 25%;
+      }
     }
-  }
-  .main-search .dropdown-toggle::after {
-    top: 17px;
   }
 }

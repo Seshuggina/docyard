@@ -15,7 +15,7 @@
     .dropdown {
         .btn {
             max-width: 200px;
-            min-width: 150px;
+            min-width: 100px;
             text-align: left;
             span {
                 max-width: 150px;
@@ -30,6 +30,27 @@
         right: 12px;
         position: absolute;
         top: 23px;
+    }
+    .nav-search & {
+        .search-string {
+            width: 30%;
+        }
+        .location {
+            width: 20%;
+        }
+        .form-control {
+            border: none;
+            width: 100%;
+        }
+        .dropdown {
+            .btn {
+                max-width: 150px;
+                min-width: 100px;
+                span {
+                    max-width: 150px;
+                }
+            }
+        }
     }
 }
 

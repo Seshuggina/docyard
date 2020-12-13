@@ -12,6 +12,7 @@ export class NavbarComponent implements OnInit, OnDestroy {
 
   searchText:string;
   showMainSearch:boolean;
+  showNavbarSearch:boolean = false;
 
   // Private Variables
   private unsubscribe: Subject<void> = new Subject();
@@ -23,6 +24,10 @@ export class NavbarComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit(): void {
+  }
+
+  toggleNavbarSearch() {
+    this.showNavbarSearch = !this.showNavbarSearch;
   }
 
   ngOnDestroy() {
