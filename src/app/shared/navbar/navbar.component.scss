@@ -65,6 +65,12 @@ nav {
       margin-top: 20px;
     }
   }
+  .nav-search {
+    display: none;
+    &.show {
+      display: block;
+    }
+  }
 }
 
 @media (max-width: 768px) {
@@ -104,8 +110,8 @@ nav {
   #toggleSearch {
     display: none;
   }
-  .navbar {
-    flex-flow: inherit;
+  .navbar-nav {
+    justify-content: flex-end;
   }
 }
 @media screen and (max-width: 500px) {
