@@ -11,6 +11,7 @@ import { SharedModule } from './shared/shared.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { SearchComponent } from './search/search.component';
+import { ProfileComponent } from './profile/profile.component';
 
 
 
@@ -18,7 +19,8 @@ import { SearchComponent } from './search/search.component';
   declarations: [
     AppComponent,
     HomeComponent,
-    SearchComponent
+    SearchComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,

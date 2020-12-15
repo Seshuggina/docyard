@@ -21,28 +21,6 @@
         }
     }
 }
-.search-result-wrap {
-    @media (max-width: 767.98px) {
-        flex-direction: column;
-    }
-}
-
-.search-result {
-    width: 70%;
-    @media (max-width: 767.98px) {
-        width: 100%;
-    }
-}
-
-.additional-content {
-    margin-left: 2%;
-    flex-grow: 1;
-    padding: 10px;
-    border: 1px solid #ddd;
-    @media (max-width: 767.98px) {
-        margin-left: 0;
-    }
-}
 
 .doc-thumbnail {
     display: flex;

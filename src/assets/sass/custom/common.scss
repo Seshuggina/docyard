@@ -55,6 +55,27 @@
     }
 }
 
+.main-content-wrap {
+    @media (max-width: 767.98px) {
+        flex-direction: column;
+    }
+}
+.main-content {
+    width: 70%;
+    @media (max-width: 767.98px) {
+        width: 100%;
+    }
+}
+.additional-content {
+    margin-left: 2%;
+    flex-grow: 1;
+    padding: 10px;
+    border: 1px solid #ddd;
+    @media (max-width: 767.98px) {
+        margin-left: 0;
+    }
+}
+
 @media (max-width: 767.98px) {
     .main-search {
         flex-direction: column;
@@ -85,5 +106,73 @@
 .scrolled {
     .navbar {
         box-shadow: 0 0 10px rgba(48, 63, 159, 0.8) !important;
+    }
+}
+
+.doc-thumbnail {
+    display: flex;
+    border: 1px solid #ddd;
+    flex-wrap: wrap;
+    margin-bottom: 15px;
+    box-shadow: 0px 0px 1px 2px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 500ms;
+    &:hover {
+        box-shadow: 0px 0px 5px 2px rgba(0, 0, 0, 0.3);
+    }
+    h5 {
+        width: 100%;
+    }
+    .avatar {
+        justify-content: center;
+        width: 100px;
+        margin-right: 10px;
+        img {
+            max-width: 100%;
+        }
+        figure {
+            min-height: 100px;
+            background-color: #ddd;
+        }
+    }
+    .distance {
+        padding: 5px 10px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 75%;
+        width: 100%;
+        border-top: 1px solid #ddd;
+        background: #f8f8f8;
+    }
+}
+.thumbnail-header {
+    padding: 5px 10px;
+    margin: 0;
+    background:aliceblue;
+    border-bottom: 1px solid #ddd;
+    small {
+        font-size: 60%;
+    }
+}
+.book-appointment {
+    padding-left: 20px;
+}
+.searchFilter {
+    margin: 10px 0;
+}
+.thumbnail-content {
+    width: 100%;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    @media (max-width: 767.98px) {
+        flex-wrap: wrap;
+        aside {
+            width: 100%;
+        }
+        .book-appointment {
+            text-align: center;
+            padding-left: 0;
+        }
     }
 }

@@ -1,4 +1,4 @@
-<article class="container-fluid">
+<div class="container-fluid">
   <nav class="searchFilter d-flex">
     <form>
       <div class="form-row">
@@ -27,8 +27,8 @@
     </form>
   </nav>
 
-  <article class="search-result-wrap d-flex">
-    <div class="search-result">
+  <article class="main-content-wrap d-flex">
+    <div class="main-content">
       <section class="doc-thumbnail" *ngFor="let item of [1,2,3,5]; index as idx"
         [@listAnimation]="searchResult.length">
         <h5 class="thumbnail-header">Seshu Vuggina <small class="text-muted">- 10 Year of Experience</small></h5>
@@ -81,7 +81,7 @@
       Your Adds and Addtional Data
     </aside>
   </article>
-</article>
+</div>
 <div class="modal fade" id="callForAppointment" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
   aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
