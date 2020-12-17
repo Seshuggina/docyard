@@ -32,12 +32,6 @@
         top: 23px;
     }
     .nav-search & {
-        .search-string {
-            width: 30%;
-        }
-        .location {
-            width: 20%;
-        }
         .form-control {
             border: none;
             width: 100%;
@@ -52,6 +46,9 @@
                 }
             }
         }
+    }
+    .nav-search & {
+        justify-content: flex-start;
     }
 }
 

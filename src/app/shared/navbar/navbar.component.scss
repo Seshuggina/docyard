@@ -5,6 +5,7 @@ nav {
   box-shadow: none;
   font-family: $font-noto;
   font-weight: 600;
+  flex-wrap: nowrap;
 }
 .navbar-light .navbar-brand {
   color: #fff;
@@ -76,11 +77,11 @@ nav {
 @media (max-width: 768px) {
   .nav-search {
     position: fixed;
-    width: 100%;
+    width: 90%;
     left: 0;
     padding: 10px;
     flex-direction: row;
-    background: rgba(0,0,0,0.5);
+    // background: rgba(0,0,0,0.5);
     z-index: 1;
     .main-search {
       flex-direction: row;
@@ -91,12 +92,15 @@ nav {
       }
       .location, .search-string, .dropdown {
         margin-bottom: 0;
+        border-left: 0;
       }
       .location {
-        width: 25%;
+        flex-grow: 1;
+        width: auto;
       }
       .search-string {
-        width: 30%;
+        flex-grow: 1;
+        width: auto;
       }
     }
   }
@@ -112,6 +116,12 @@ nav {
   }
   .navbar-nav {
     justify-content: flex-end;
+  }
+  #navbarNav {
+    flex-grow: 0;
+  }
+  .nav-search {
+    flex-grow: 1;
   }
 }
 @media screen and (max-width: 500px) {
@@ -138,15 +148,5 @@ nav {
 
   #logreg-forms .google-btn:after {
     content: "Google+";
-  }
-  .nav-search {
-    .main-search {
-      .location {
-        width: 20%;
-      }
-      .search-string {
-        width: 25%;
-      }
-    }
   }
 }
