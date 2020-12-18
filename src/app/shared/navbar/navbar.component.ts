@@ -13,14 +13,14 @@ export class NavbarComponent implements OnInit, OnDestroy {
 
   searchText:string;
   showMainSearch:boolean;
-  showHideSearch:boolean;
-
+  showSearchButton:boolean;
   // Private Variables
   private unsubscribe: Subject<void> = new Subject();
 
   constructor(private globals:Globals) {
     this.globals.showSearchInHeader.pipe(takeUntil(this.unsubscribe)).subscribe(status => {
       this.showMainSearch = status;
+      this.showSearchButton = status;
     });
   }
 
@@ -28,7 +28,7 @@ export class NavbarComponent implements OnInit, OnDestroy {
   }
 
   toggleNavbarSearch() {
-    this.showHideSearch = !this.showHideSearch;
+    this.showMainSearch = !this.showMainSearch;
   }
 
   ngOnDestroy() {
