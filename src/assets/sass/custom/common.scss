@@ -17,6 +17,11 @@
             max-width: 200px;
             min-width: 100px;
             text-align: left;
+            border-top-right-radius: 0;
+            border-bottom-right-radius: 0;
+            @media (max-width: 767.98px) {
+                line-height: 24px;
+            }
             span {
                 max-width: 150px;
                 white-space: nowrap;
@@ -30,6 +35,13 @@
         right: 12px;
         position: absolute;
         top: 23px;
+        @media (max-width: 767.98px) {
+            top: 19px;
+        }
+    }
+    .btn-primary {
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
     }
     .nav-search & {
         justify-content: flex-start;

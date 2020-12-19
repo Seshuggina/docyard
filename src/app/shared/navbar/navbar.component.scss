@@ -99,11 +99,11 @@ nav {
 @media (max-width:991.98px) {
   .navbar-collapse {
     position: absolute;
-    top: 57px;
+    top: 56px;
     left: 0;
     padding: 10px;
     height: 100vh !important;
-    background: linear-gradient(45deg, #7b1fa2, #303f9f);
+    background: linear-gradient(-70deg, #7b1fa2, #303f9f);
     min-width: 300px;
     box-shadow:3px 1px 4px -3px #222;
   }

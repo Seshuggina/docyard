@@ -8,7 +8,7 @@
     background: linear-gradient(45deg, #303f9f, #7b1fa2);
     // background-image: url("../../assets/img/banner.jpeg");
     background-size: cover;
-    z-index: -1;
+    z-index: 1;
     color: #fff;
     // .banner_background {
     //     background: -webkit-linear-gradient(45deg,#303f9f,#7b1fa2);
@@ -30,7 +30,8 @@
     left: 10%;
     right: 10%;
     top: calc(100vh - 80px);
-    position: fixed;
+    position: absolute;
+    z-index: 2;
     button {
         flex-grow: 1;
         margin: 0 8px;
