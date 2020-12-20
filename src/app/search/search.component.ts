@@ -1,7 +1,7 @@
 import { animate, query, stagger, style, transition, trigger } from '@angular/animations';
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { MainSearch } from '../models/search.model';
 import { SearchResult } from '../services/models/search.model';
 import { SearchService } from '../services/search.service';
@@ -44,7 +44,8 @@ export class SearchComponent implements OnInit {
   constructor(
     private searchService: SearchService,
     private route: ActivatedRoute,
-    private globals:Globals
+    private globals:Globals,
+    private router: Router
   ) {
     this.globals.showSearchInHeader.next(true);
   }
@@ -68,14 +69,19 @@ export class SearchComponent implements OnInit {
   loadSearchResults() {
     this.searchObject.searchType = this.defaultSearchType;
     this.searchObject.searchText = this.searchText;
-    // this.searchService.getSearchList(this.searchObject).subscribe((data) => {
-    //   this.searchResult = data;
-    // });
+  }
+
+  callAppointment() {
+    console.log("Call AppointMent");
   }
 
   bookAppointment() {
     console.log("Book AppointMent");
     this.open();
+  }
+
+  showProfile() {
+    this.router.navigate(['/profile', "seshu.vuggina"]);
   }
 
   public opened: boolean = false;
@@ -104,5 +110,8 @@ export class SearchComponent implements OnInit {
     address: new FormControl(),
     comments: new FormControl()
 });
+
+
+
 
 }

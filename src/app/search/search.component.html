@@ -1,5 +1,5 @@
-<div class="container">
-  <nav class="searchFilter d-flex">
+<div class="container mt-3">
+  <!-- <nav class="searchFilter d-flex">
     <form>
       <div class="form-row">
         <div class="pl-2">Filter:</div>
@@ -25,14 +25,12 @@
         </div>
       </div>
     </form>
-  </nav>
+  </nav> -->
 
   <article class="main-content-wrap d-flex">
     <div class="main-content">
-      <section class="doc-thumbnail" *ngFor="let item of [1,2,3,5]; index as idx"
-        [@listAnimation]="searchResult.length">
-        <h5 class="thumbnail-header">Seshu Vuggina <small class="text-muted">- 10 Year of Experience</small></h5>
-        
+      <section class="doc-thumbnail" *ngFor="let item of [1,2,3]; index as idx"
+        [@listAnimation]="searchResult.length">        
         <div class="thumbnail-content">
           <aside>
             <div class="d-flex">
@@ -46,6 +44,8 @@
                   Verified</span>
               </div>
               <div class="">
+                <h5 class="m-0">Seshu Vuggina</h5>
+                <small class="text-muted d-block">10 Year of Experience</small>
                 <span class="d-block text-muted">ABC | MBBS | FRCS</span>
                 <div class="media">
                   <span class="pr-2"><i class="fa fa-stethoscope"></i>Timings: </span>
@@ -63,18 +63,17 @@
             <strong class="d-block text-center">Price : 200.00 INR</strong>
             <div class="mt-2">
               <button class="btn btn-primary btn-sm mb-2 w-100" data-toggle="modal" data-target="#callForAppointment"
-                (click)="bookAppointment()">Call For Appointment</button><br>
+                (click)="callAppointment()">Call For Appointment</button><br>
               <button class="btn btn-primary btn-sm mb-2 w-100" data-toggle="modal" data-target="#bookAppointment"
                 (click)="bookAppointment()">Book online</button>
-                <button class="btn btn-primary btn-sm w-100" data-toggle="modal" data-target="#bookAppointment"
-                (click)="bookAppointment()">View Profile</button>
+                <button class="btn btn-primary btn-sm w-100" (click)="showProfile()">View Profile</button>
             </div>
           </aside>
         </div>
-        <div class="distance">
+        <!-- <div class="distance">
           <address class="m-0 text-muted">Belladur, Bangalore</address>
           <span class="text-warning">0.5KM</span>
-        </div>
+        </div> -->
       </section>
     </div>
     <aside class="additional-content">
