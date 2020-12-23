@@ -1,3 +1,13 @@
-.tab-pane, .services {
+.tab-pane,
+.services {
     padding: 10px 15px;
+}
+
+.star-rating {
+    .fa:not(:first-child) {
+        margin-left: 5px;
+    }
+    .fa-star {
+        color: green;
+    }
 }
