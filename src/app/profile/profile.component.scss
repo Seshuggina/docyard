@@ -1,6 +1,7 @@
 .tab-pane,
 .services {
-    padding: 10px 15px;
+    padding: 10px;
+    background-color: white;
 }
 
 .star-rating {
@@ -10,4 +11,21 @@
     .fa-star {
         color: green;
     }
+}
+
+.service {
+   .list-inline-item:not(:last-child) {
+        margin-right: 15px;
+    }
+    &:last-child .list-unstyled{
+        border-bottom: none;
+        padding-bottom: 0;
+        margin-bottom: 0;
+    }
+}
+
+.list-unstyled {
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 15px;
+    padding-left: 15px;
 }
