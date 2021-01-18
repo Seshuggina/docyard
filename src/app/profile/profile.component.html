@@ -32,7 +32,8 @@
                                     designs and the CKD, ng add, better tree-shakability, CLI workspace and a couple of
                                     more which we will discuss in the coming articles.</p>
                                 <button class="btn btn-primary btn-sm mb-2 float-right" data-toggle="modal"
-                                    data-target="#callForAppointment">Call For
+                                    data-target="#callForAppointment"><i class="fa fa-phone" aria-hidden="true"></i>
+                                    Call For
                                     Appointment</button>
                             </div>
                         </div>
@@ -46,6 +47,10 @@
                         aria-controls="home" aria-selected="true">Info</a>
                 </li>
                 <li class="nav-item">
+                    <a class="nav-link" id="stories-tab" data-toggle="tab" href="#stories" role="tab"
+                        aria-controls="stories" aria-selected="true">Stories(5)</a>
+                </li>
+                <li class="nav-item">
                     <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab"
                         aria-controls="profile" aria-selected="false">Consult Q&A</a>
                 </li>
@@ -54,9 +59,10 @@
                         aria-controls="contact" aria-selected="false">Health Feed</a>
                 </li>
             </ul>
+            <!-- Tab Content -->
             <div class="tab-content" id="myTabContent">
-                <div class="container tab-pane border-left border-right border-bottom fade show active clearfix" id="home"
-                    role="tabpanel" aria-labelledby="home-tab">
+                <div class="container tab-pane border-left border-right border-bottom fade show active clearfix"
+                    id="home" role="tabpanel" aria-labelledby="home-tab">
                     <div class="row">
                         <div class="col-md-6 col-xs-12">
                             <strong class="d-block mb-1">
@@ -75,12 +81,13 @@
                                         <div class="well well-sm">
                                             <div class="row">
                                                 <div class="col-xs-12 col-md-6 text-center">
-                                                    <h1 class="rating-num mb-0">4.0</h1>
+                                                    <h1 class="rating-num mb-0">3.5</h1>
                                                     <div class="star-rating">
-                                                        <span class="fa fa-star-o fa-star" data-rating="1"></span>
-                                                        <span class="fa fa-star-o fa-star" data-rating="2"></span>
-                                                        <span class="fa fa-star-o fa-star" data-rating="3"></span>
-                                                        <span class="fa fa-star-o" data-rating="4"></span>
+                                                        <!-- https://fontawesome.com/v4.7.0/icons/ -->
+                                                        <span class="fa fa-star" data-rating="1"></span>
+                                                        <span class="fa fa-star" data-rating="2"></span>
+                                                        <span class="fa fa-star" data-rating="3"></span>
+                                                        <span class="fa fa-star-half-o" data-rating="4"></span>
                                                         <span class="fa fa-star-o" data-rating="5"></span>
                                                         <input type="hidden" name="whatever1" class="rating-value"
                                                             value="2.56">
@@ -89,77 +96,77 @@
                                                 </div>
                                                 <div class="col-xs-12 col-md-6">
                                                     <div class="row rating-desc">
-                                                        <div class="col-xs-3 col-md-3 text-right text-nowrap">
-                                                            <span class="fa fa-star-o mr-1" data-rating="5"></span> 5
+                                                        <div
+                                                            class="col-xs-3 col-md-3 text-right text-nowrap text-success">
+                                                            <span class="fa fa-star green mr-1" data-rating="5"></span>
+                                                            5
                                                         </div>
                                                         <div class="col-xs-8 col-md-9">
                                                             <div class="progress progress-striped">
-                                                                <div class="progress-bar progress-bar-success"
-                                                                    role="progressbar" aria-valuenow="20"
-                                                                    aria-valuemin="0" aria-valuemax="100"
-                                                                    style="width: 80%">
+                                                                <div class="progress-bar bg-success" role="progressbar"
+                                                                    aria-valuenow="20" aria-valuemin="0"
+                                                                    aria-valuemax="100" style="width: 85%">
 
                                                                 </div>
-                                                                <span class="percent">80%</span>
+                                                                <span class="percent">85%</span>
                                                             </div>
                                                         </div>
                                                         <!-- end 5 -->
-                                                        <div class="col-xs-3 col-md-3 text-right text-nowrap">
-                                                            <span class="fa fa-star-o mr-1" data-rating="4"></span> 4
+                                                        <div
+                                                            class="col-xs-3 col-md-3 text-right text-nowrap text-success">
+                                                            <span class="fa fa-star mr-1" data-rating="4"></span> 4
                                                         </div>
                                                         <div class="col-xs-8 col-md-9">
                                                             <div class="progress">
-                                                                <div class="progress-bar progress-bar-success"
-                                                                    role="progressbar" aria-valuenow="20"
-                                                                    aria-valuemin="0" aria-valuemax="100"
-                                                                    style="width: 60%">
+                                                                <div class="progress-bar bg-success" role="progressbar"
+                                                                    aria-valuenow="20" aria-valuemin="0"
+                                                                    aria-valuemax="100" style="width: 70%">
 
                                                                 </div>
-                                                                <span class="percent">60%</span>
+                                                                <span class="percent">70%</span>
                                                             </div>
                                                         </div>
                                                         <!-- end 4 -->
-                                                        <div class="col-xs-3 col-md-3 text-right text-nowrap">
-                                                            <span class="fa fa-star-o mr-1" data-rating="3"></span> 3
+                                                        <div class="col-xs-3 col-md-3 text-right text-nowrap text-info">
+                                                            <span class="fa fa-star mr-1" data-rating="3"></span> 3
                                                         </div>
                                                         <div class="col-xs-8 col-md-9">
                                                             <div class="progress">
-                                                                <div class="progress-bar progress-bar-info"
-                                                                    role="progressbar" aria-valuenow="20"
-                                                                    aria-valuemin="0" aria-valuemax="100"
-                                                                    style="width: 40%">
+                                                                <div class="progress-bar bg-info" role="progressbar"
+                                                                    aria-valuenow="20" aria-valuemin="0"
+                                                                    aria-valuemax="100" style="width: 40%">
 
                                                                 </div>
                                                                 <span class="percent">40%</span>
                                                             </div>
                                                         </div>
                                                         <!-- end 3 -->
-                                                        <div class="col-xs-3 col-md-3 text-right text-nowrap">
-                                                            <span class="fa fa-star-o mr-1" data-rating="2"></span> 2
+                                                        <div
+                                                            class="col-xs-3 col-md-3 text-right text-nowrap text-warning">
+                                                            <span class="fa fa-star mr-1" data-rating="2"></span> 2
                                                         </div>
                                                         <div class="col-xs-8 col-md-9">
                                                             <div class="progress">
-                                                                <div class="progress-bar progress-bar-warning"
-                                                                    role="progressbar" aria-valuenow="20"
-                                                                    aria-valuemin="0" aria-valuemax="100"
-                                                                    style="width: 20%">
+                                                                <div class="progress-bar bg-warning" role="progressbar"
+                                                                    aria-valuenow="20" aria-valuemin="0"
+                                                                    aria-valuemax="100" style="width: 20%">
 
                                                                 </div>
                                                                 <span class="percent">20%</span>
                                                             </div>
                                                         </div>
                                                         <!-- end 2 -->
-                                                        <div class="col-xs-3 col-md-3 text-right text-nowrap">
-                                                            <span class="fa fa-star-o mr-1" data-rating="1"></span> 1
+                                                        <div
+                                                            class="col-xs-3 col-md-3 text-right text-nowrap text-danger">
+                                                            <span class="fa fa-star mr-1" data-rating="1"></span> 1
                                                         </div>
                                                         <div class="col-xs-8 col-md-9">
                                                             <div class="progress">
-                                                                <div class="progress-bar progress-bar-danger"
-                                                                    role="progressbar" aria-valuenow="80"
-                                                                    aria-valuemin="0" aria-valuemax="100"
-                                                                    style="width: 15%">
+                                                                <div class="progress-bar bg-danger" role="progressbar"
+                                                                    aria-valuenow="80" aria-valuemin="0"
+                                                                    aria-valuemax="100" style="width: 5%">
                                                                 </div>
-                                                                <span class="percent">15%</span>
+                                                                <span class="percent">5%</span>
                                                             </div>
                                                         </div>
                                                         <!-- end 1 -->
@@ -196,21 +203,65 @@
                             </a>
                         </li>
                     </ul>
-                    <button class="btn btn-primary float-right">Call Now</button>
+                    <button class="btn btn-primary float-right">
+                        <i class="fa fa-phone" aria-hidden="true"></i> Call Now
+                    </button>
+                </div>
+                <!-- Tab Content - Stories -->
+                <div class="tab-pane border-left border-right border-bottom fade clearfix" id="stories" role="tabpanel"
+                    aria-labelledby="profile-tab">
+                    <h5 class="m-0">Patient Stories for Dr. Ajith R Pill</h5>
+                    <small class="text-muted">These are patient’s opinions and do not necessarily reflect the doctor’s
+                        medical capabilities</small>
+                    <section class="doc-thumbnail">
+                        <aside>
+                            <div class="d-flex">
+                                <div class="avatar text-center">
+                                    <figure class="m-0">
+                                        <img src="https://media-exp1.licdn.com/dms/image/C5603AQEzxkiBN2QmPg/profile-displayphoto-shrink_200_200/0?e=1605744000&v=beta&t=iSQOnktLr7_bxGm5twg_FfqxX6JleTpQ77b1JOFrqu8"
+                                            class="mr-3" alt="Profile Photo">
+                                    </figure>
+                                </div>
+                                <div class="">
+                                    <h5 class="mb-0">Patient Name</h5>
+                                    <small class="text-muted">10 Year of Experience</small>
+                                    <span class="badge badge-success"><i class="icon-thumbs-up"></i> 92% </span>
+                                    <button class="btn btn-sm btn-link">999 Patient Stories</button>
+                                    <p>Friends you might be well aware that Angular 6 has come and true to its every
+                                        release
+                                        it has come with a lot of wonderful features. The new features include but not
+                                        limited to updating the packages automatically, in built support for material
+                                        designs and the CKD, ng add, better tree-shakability, CLI workspace and a couple
+                                        of
+                                        more which we will discuss in the coming articles.</p>
+                                </div>
+                            </div>
+                        </aside>
+                    </section>
                 </div>
 
                 <div class="tab-pane border-left border-right border-bottom fade clearfix" id="profile" role="tabpanel"
                     aria-labelledby="profile-tab">asdasd asd asd asda sdasd as</div>
+
                 <div class="tab-pane border-left border-right border-bottom fade clearfix" id="contact" role="tabpanel"
                     aria-labelledby="contact-tab">aeqweqw qweqwe qwe qweqwe </div>
             </div>
+
+            <!-- End of Tab Content -->
 
             <section class="services border mt-4">
                 <div class="service">
                     <h5>Service Title</h5>
                     <ul class="list-unstyled list-inline">
                         <li class="list-inline-item"><a class="btn-link disabled" href="#">RCT</a></li>
-                        <li class="list-inline-item"><a class="btn-link" href="#">Link</a></li>
+                        <li class="list-inline-item"><a class="btn-link" href="#">Laser Treatments</a></li>
+                        <li class="list-inline-item"><a class="btn-link" href="#">Dental Implant Fixing</a></li>
+                        <li class="list-inline-item"><a class="btn-link disabled" href="#">RCT</a></li>
+                        <li class="list-inline-item"><a class="btn-link" href="#">Laser Treatments</a></li>
+                        <li class="list-inline-item"><a class="btn-link" href="#">Dental Implant Fixing</a></li>
+                        <li class="list-inline-item"><a class="btn-link disabled" href="#">RCT</a></li>
+                        <li class="list-inline-item"><a class="btn-link" href="#">Laser Treatments</a></li>
+                        <li class="list-inline-item"><a class="btn-link" href="#">Dental Implant Fixing</a></li>
                     </ul>
                 </div>
                 <div class="service">
@@ -218,6 +269,15 @@
                     <ul class="list-unstyled">
                         <li class="list-inline-item"><a class="btn-link disabled" href="#">Ortho</a></li>
                         <li class="list-inline-item"><a class="btn-link" href="#">Link Text</a></li>
+                    </ul>
+                </div>
+                <div class="service">
+                    <h5>Awards and Recognitions</h5>
+                    <ul class="list-unstyled">
+                        <li class="list-inline-item"><a class="btn-link disabled" href="#">World federation of
+                                orthodontics - 2013</a></li>
+                        <li class="list-inline-item"><a class="btn-link disabled" href="#">Academy of advanced dental
+                                sciences - 2015</a></li>
                     </ul>
                 </div>
                 <div class="service">
@@ -240,8 +300,9 @@
             <small class="d-block mb-2">CONTACT CLINIC TO BOOK APPOINTMENT</small>
             <strong class="d-block">VK Dental Clinic</strong>
             <hr>
-            <p>Due to lockdown you can call the clinic to check for doctor availability and appointment booking.</p>
-            <button class="btn btn-primary btn-block">Call Now</button>
+            <p class="text-center">Due to lockdown you can call the clinic to check for doctor availability and
+                appointment booking.</p>
+            <button class="btn btn-primary btn-block"><i class="fa fa-phone" aria-hidden="true"></i> Call Now</button>
         </aside>
     </article>
 </div>
