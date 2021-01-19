@@ -213,38 +213,45 @@
                     <h5 class="m-0">Patient Stories for Dr. Ajith R Pill</h5>
                     <small class="text-muted">These are patient’s opinions and do not necessarily reflect the doctor’s
                         medical capabilities</small>
-                    <section class="doc-thumbnail">
-                        <aside>
-                            <div class="d-flex">
-                                <div class="avatar text-center">
-                                    <figure class="m-0">
-                                        <img src="https://media-exp1.licdn.com/dms/image/C5603AQEzxkiBN2QmPg/profile-displayphoto-shrink_200_200/0?e=1605744000&v=beta&t=iSQOnktLr7_bxGm5twg_FfqxX6JleTpQ77b1JOFrqu8"
-                                            class="mr-3" alt="Profile Photo">
-                                    </figure>
-                                </div>
-                                <div class="">
-                                    <h5 class="mb-0">Patient Name</h5>
-                                    <small class="text-muted">10 Year of Experience</small>
-                                    <span class="badge badge-success"><i class="icon-thumbs-up"></i> 92% </span>
-                                    <button class="btn btn-sm btn-link">999 Patient Stories</button>
-                                    <p>Friends you might be well aware that Angular 6 has come and true to its every
-                                        release
-                                        it has come with a lot of wonderful features. The new features include but not
-                                        limited to updating the packages automatically, in built support for material
-                                        designs and the CKD, ng add, better tree-shakability, CLI workspace and a couple
-                                        of
-                                        more which we will discuss in the coming articles.</p>
-                                </div>
-                            </div>
-                        </aside>
-                    </section>
+
+                    <div class="d-flex stories" *ngFor="let item of [1,2,3]; index as idx">
+                        <div class="avatar text-center">
+                            <figure class="m-0">
+                                <img src="https://via.placeholder.com/100">
+                            </figure>
+                        </div>
+                        <div class="">
+                            <strong>Patient Name</strong><br>
+                            <p class="text-success"><i class="fa fa-thumbs-up"></i> 92% I recommend the doctor</p>
+                            <p>Happy With
+                                <span class="badge badge-secondary mr-1">Doctor friendliness</span>
+                                <span class="badge badge-secondary mr-1">Explanation of the health issue</span>
+                                <span class="badge badge-secondary mr-1">Treatment satisfaction</span>
+                                <span class="badge badge-secondary mr-1">Wait time</span>
+                            </p>
+                            Doctor is friendly and his treatment was giving the full satisfaction for the patient,
+                            And he explaining the whole things very clearly to us
+                        </div>
+                    </div>
                 </div>
 
                 <div class="tab-pane border-left border-right border-bottom fade clearfix" id="profile" role="tabpanel"
-                    aria-labelledby="profile-tab">asdasd asd asd asda sdasd as</div>
+                    aria-labelledby="profile-tab">
+                    <section class="text-center">
+                        <p class="text-info"><i class="fa fa-pencil-square"></i></p>
+                        <p>No query answered by this doctor. Get answers to your health queries now</p>
+                        <button class="btn btn-info">Ask Free Question</button>
+                    </section>
+                </div>
 
                 <div class="tab-pane border-left border-right border-bottom fade clearfix" id="contact" role="tabpanel"
-                    aria-labelledby="contact-tab">aeqweqw qweqwe qwe qweqwe </div>
+                    aria-labelledby="contact-tab">
+                    <section class="text-center">
+                        <p class="text-info"><i class="fa fa-pencil-square"></i></p>
+                        <p>No articles written by this doctor.</p>
+                        <button class="btn btn-info">Read all articles</button>
+                    </section>
+                </div>
             </div>
 
             <!-- End of Tab Content -->
