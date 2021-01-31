@@ -4,6 +4,12 @@
     background-color: white;
 }
 
+.profile-page {
+    .thumbnail-content {
+        border: 1px solid #ddd;
+    }
+}
+
 .star-rating {
     .fa:not(:first-child) {
         margin-left: 5px;
